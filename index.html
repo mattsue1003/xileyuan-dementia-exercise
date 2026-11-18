@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="有事做・動得了">
+<meta property="og:description" content="喜樂園積分課 11/22：失智症日常活動安排及活動規劃 × 肢體關節活動與肌力訓練">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+<title>有事做・動得了</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="喜樂園積分課 11/22：失智症日常活動安排及活動規劃 × 肢體關節活動與肌力訓練">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800;900&family=Instrument+Serif:ital@1&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@300;400&display=swap">
+<style>
+/* Layout: full-screen slides like a film-production site — black / hot magenta blob / paper, giant staggered caps, bracket labels, wipe transitions */
+:root{
+  --ink:#0b0a0b;
+  --ink2:#1a1719;
+  --magenta:#e8106f;
+  --magenta-deep:#8f0a47;
+  --mint:#39d9b6;
+  --paper:#f2efea;
+  --white:#ffffff;
+  --grey:#9b9397;
+  --display:"Inter Tight","Noto Sans TC",system-ui,sans-serif;
+  --serif:"Instrument Serif","Noto Serif TC",Georgia,serif;
+  --body:"Inter Tight","Noto Sans TC",system-ui,sans-serif;
+  --u:min(1vw,1.7778vh);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ink);color:var(--white);font-family:var(--body);overflow:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+a{color:inherit}
+
+/* ---------- chrome ---------- */
+.top{position:fixed;z-index:30;inset:0 0 auto;display:flex;justify-content:space-between;align-items:flex-start;
+  padding:calc(env(safe-area-inset-top,0px) + 14px) max(18px,env(safe-area-inset-right,0px)) 0 max(18px,env(safe-area-inset-left,0px));pointer-events:none;mix-blend-mode:normal}
+.logo{font:900 22px/0.86 var(--display);letter-spacing:-.02em;color:var(--mint);pointer-events:auto;text-transform:uppercase}
+.logo sup{font-size:.5em;vertical-align:top;margin-left:2px}
+.logo small{display:block;font:700 11px/1.3 var(--body);color:var(--white);letter-spacing:.04em;margin-top:8px;opacity:.8;text-transform:none}
+.nav{display:flex;gap:22px;pointer-events:auto;font:800 12.5px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.nav button{white-space:nowrap;opacity:.92}
+.nav button:hover{color:var(--mint)}
+.nav button.on{color:var(--mint)}
+.bottom{position:fixed;z-index:30;inset:auto 0 0;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;
+  padding:0 max(18px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 14px) max(18px,env(safe-area-inset-left,0px));pointer-events:none;font:800 12.5px/1.2 var(--display);text-transform:uppercase}
+.bottom .pg{pointer-events:auto}
+.bottom .pg b{color:var(--mint);font-variant-numeric:tabular-nums}
+.bottom .arrows{display:flex;gap:8px;pointer-events:auto}
+.bottom .arrows button{border:1.5px solid currentColor;width:42px;height:34px;font-size:16px}
+.bottom .arrows button:hover{background:var(--white);color:var(--ink)}
+.progress{position:fixed;z-index:31;left:0;bottom:0;height:3px;background:var(--mint);width:0;transition:width .5s cubic-bezier(.7,0,.2,1)}
+
+/* ---------- slides ---------- */
+.deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;display:none;overflow:hidden;
+  padding:calc(var(--u)*6.8) max(calc(var(--u)*4),16px,env(safe-area-inset-right,0px)) calc(var(--u)*5.6) max(calc(var(--u)*4),16px,env(safe-area-inset-left,0px))}
+.slide.on{display:flex;flex-direction:column}
+.slide>.fill{flex:1;min-height:0;display:grid;position:relative;z-index:2}
+.bg-black{background:var(--ink)}
+.bg-paper{background:var(--paper);color:var(--ink)}
+.bg-mag{background:var(--magenta)}
+.bg-mag::before{content:"";position:absolute;inset:-20%;z-index:0;
+  background:radial-gradient(40% 45% at 30% 40%,var(--magenta-deep) 0,transparent 70%),
+             radial-gradient(35% 40% at 75% 65%,#ff2f86 0,transparent 70%),
+             radial-gradient(30% 30% at 70% 20%,#b40d58 0,transparent 75%),
+             radial-gradient(45% 40% at 20% 85%,#c70e5f 0,transparent 70%);
+  animation:blob 16s ease-in-out infinite alternate}
+@keyframes blob{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(4%,-3%) rotate(8deg)}100%{transform:translate(-3%,4%) rotate(-6deg)}}
+.halftone{position:absolute;inset:0;z-index:1;pointer-events:none}
+.bg-paper .nav,.bg-paper~.x{color:var(--ink)}
+
+/* ---------- type ---------- */
+.lab{font:800 calc(max(12px,var(--u)*1.15))/1.2 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.lab .br{opacity:.6}
+.mint{color:var(--mint)}
+.bg-paper .mint{color:#0f8f74}
+.mag{color:var(--magenta)}
+.hl{font:900 calc(var(--u)*8.6)/1.02 var(--display);letter-spacing:-.035em;text-transform:uppercase;margin:0;text-wrap:balance}
+.hl span.l{display:block;white-space:nowrap}
+.it{font-family:var(--serif);font-weight:300;font-style:italic;letter-spacing:-.01em;text-transform:none}
+.it.cj{display:inline-block;transform:skewX(-11deg);font-weight:300;margin-right:.12em}
+.h2{font:900 calc(var(--u)*5.4)/.95 var(--display);letter-spacing:-.03em;margin:0;text-wrap:balance}
+.h3{font:900 calc(max(18px,var(--u)*2.3))/1.1 var(--display);letter-spacing:-.01em;margin:0}
+.p{font:500 calc(max(15px,var(--u)*1.75))/1.6 var(--body);margin:0;max-width:40em}
+.sm{font:500 calc(max(13px,var(--u)*1.35))/1.55 var(--body);margin:0}
+.ind1{padding-left:12%}.ind2{padding-left:24%}.ind3{padding-left:36%}
+.right{text-align:right}
+
+/* generic grids */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*3)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*2)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.6)}
+.g2>*,.g3>*,.g4>*{min-width:0}
+.cell{border-top:2px solid currentColor;padding-top:calc(var(--u)*1.4);display:flex;flex-direction:column;gap:calc(var(--u)*1)}
+.idx{font:800 calc(max(12px,var(--u)*1.2))/1 var(--display);color:var(--mint)}
+.bg-paper .idx{color:var(--magenta)}
+.bg-mag .idx{color:var(--white);opacity:.75}
+.box{background:var(--ink);color:var(--white);padding:calc(var(--u)*2);display:flex;flex-direction:column;gap:calc(var(--u)*1)}
+.box.w{background:var(--white);color:var(--ink)}
+.box.m{background:var(--magenta);color:var(--white)}
+.chip{display:inline-block;border:1.5px solid currentColor;padding:.25em .7em;font:800 calc(max(12px,var(--u)*1.15))/1.2 var(--display)}
+ul.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:calc(var(--u)*.7)}
+ul.list li{font:500 calc(max(14px,var(--u)*1.6))/1.45 var(--body);padding-left:1.3em;position:relative}
+ul.list li::before{content:"—";position:absolute;left:0;opacity:.6}
+
+/* ---------- specific slides ---------- */
+.cover{grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2)}
+.cover .hl{font-size:calc(var(--u)*8.4);align-self:center}
+.meta{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:calc(var(--u)*2);font:800 calc(max(12px,var(--u)*1.25))/1.45 var(--display)}
+.meta div span{display:block;opacity:.65;font-weight:700}
+
+.agenda{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*4);align-items:stretch}
+.ag{display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--u)*2);border-top:3px solid var(--white);padding-top:calc(var(--u)*1.6)}
+.ag .time{font:900 calc(var(--u)*6.4)/.9 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.ag ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:calc(var(--u)*.55)}
+.ag li{display:grid;grid-template-columns:4.2em 1fr auto;align-items:center;gap:1em;font:700 calc(max(13px,var(--u)*1.45))/1.3 var(--body)}
+.ag li i{font-style:normal;color:var(--mint);font:800 .85em var(--display)}
+.ag li .bar{height:.55em;background:#f2b49e;width:var(--w);justify-self:end;min-width:12px;animation:bar 2.6s ease-in-out infinite alternate}
+@keyframes bar{to{width:calc(var(--w)*.55)}}
+
+.part{grid-template-rows:1fr auto;align-items:end}
+.part .num{font:900 calc(var(--u)*26)/.8 var(--display);letter-spacing:-.06em;color:var(--mint)}
+
+.split{grid-template-columns:1.05fr 1fr;gap:calc(var(--u)*4);align-items:stretch}
+.split>*{min-width:0}
+.col{display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--u)*2)}
+
+.stage3 .stg{display:flex;flex-direction:column;gap:calc(var(--u)*1.2);border-top:3px solid currentColor;padding-top:calc(var(--u)*1.4)}
+.stg .big{font:900 calc(var(--u)*4.6)/.95 var(--display)}
+.stg dl{margin:0;display:grid;gap:calc(var(--u)*1)}
+.stg dt{font:800 calc(max(12px,var(--u)*1.1))/1 var(--display);opacity:.6;text-transform:uppercase}
+.stg dd{margin:0;font:500 calc(max(14px,var(--u)*1.55))/1.45 var(--body)}
+
+.story{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:calc(var(--u)*1.6)}
+.story .q{display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--u)*1);border:2px solid var(--ink);padding:calc(var(--u)*1.8)}
+.story .q .ex{font:500 calc(max(13px,var(--u)*1.45))/1.5 var(--body)}
+.story .q .ex b{color:var(--magenta)}
+
+.seg{display:flex;gap:6px}
+.seg button{border:1.5px solid currentColor;padding:.55em 1.1em;font:800 calc(max(13px,var(--u)*1.35))/1 var(--display)}
+.seg button[aria-pressed="true"]{background:var(--white);color:var(--ink)}
+.bg-paper .seg button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:calc(var(--u)*.9)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.6em 1fr;gap:.6em;align-items:baseline;font:600 calc(max(14px,var(--u)*1.7))/1.45 var(--body)}
+.steps li::before{content:"[" counter(s,decimal-leading-zero) "]";font:800 .8em var(--display);color:var(--mint)}
+.bg-paper .steps li::before{color:var(--magenta)}
+
+.ladder{display:flex;flex-direction:column-reverse;gap:6px}
+.rung{display:grid;grid-template-columns:3em 1fr;align-items:center;gap:1em;padding:calc(var(--u)*1) calc(var(--u)*1.4);border:1.5px solid rgba(255,255,255,.55);transition:background .3s,color .3s,transform .3s;text-align:left;width:100%}
+.rung b{font:900 calc(max(15px,var(--u)*2))/1 var(--display)}
+.rung span{font:600 calc(max(13px,var(--u)*1.45))/1.4 var(--body)}
+.rung span em{font-style:normal;display:block;font-weight:900;font-size:1.15em}
+.rung.on{background:var(--white);color:var(--magenta);border-color:var(--white)}
+.rung.past{opacity:.45}
+
+.day{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+.day button{background:var(--ink2);padding:calc(var(--u)*1.2) calc(var(--u)*.8);text-align:left;display:flex;flex-direction:column;gap:.4em;min-height:calc(var(--u)*13);border-top:3px solid var(--grey)}
+.day button b{font:900 calc(max(13px,var(--u)*1.6))/1 var(--display);font-variant-numeric:tabular-nums}
+.day button span{font:600 calc(max(12px,var(--u)*1.25))/1.35 var(--body)}
+.day button.hot{border-top-color:var(--mint)}
+.day button.warn{border-top-color:var(--magenta)}
+.day button[aria-pressed="true"]{background:var(--white);color:var(--ink)}
+.daydetail{display:grid;grid-template-columns:auto 1fr;gap:calc(var(--u)*3);align-items:start;border-top:2px solid var(--white);padding-top:calc(var(--u)*1.6)}
+.daydetail .t{font:900 calc(var(--u)*6)/.85 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+
+.cats{grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.6)}
+.cat{display:flex;flex-direction:column;gap:calc(var(--u)*1.2);border-top:4px solid var(--ink);padding-top:calc(var(--u)*1.2)}
+.cat .h3 small{display:block;font:700 calc(max(12px,var(--u)*1.1))/1.2 var(--display);color:var(--magenta);margin-bottom:.4em;text-transform:uppercase}
+.cat ul.list li{font-size:calc(max(14px,var(--u)*1.55))}
+
+.timebar{display:flex;height:calc(var(--u)*20);gap:4px}
+.timebar>div{display:flex;flex-direction:column;justify-content:space-between;padding:calc(var(--u)*1.2);background:rgba(0,0,0,.28);min-width:0}
+.timebar>div:nth-child(2){background:var(--white);color:var(--magenta)}
+.timebar b{font:900 calc(var(--u)*4.2)/.9 var(--display)}
+.timebar b small{font-size:.38em;margin-left:.15em}
+.timebar span{font:800 calc(max(13px,var(--u)*1.4))/1.2 var(--body)}
+
+.case{grid-template-columns:1fr 1.15fr;gap:calc(var(--u)*4)}
+.opt{width:100%;text-align:left;border:1.5px solid rgba(255,255,255,.6);padding:calc(var(--u)*1.3) calc(var(--u)*1.6);display:grid;grid-template-columns:2.2em 1fr;gap:.6em;font:600 calc(max(14px,var(--u)*1.6))/1.45 var(--body);transition:background .25s}
+.opt b{font:900 1.1em var(--display);color:var(--mint)}
+.opt:hover{background:rgba(255,255,255,.08)}
+.opt.good{background:var(--mint);color:var(--ink);border-color:var(--mint)}
+.opt.good b{color:var(--ink)}
+.opt.bad{background:var(--magenta);border-color:var(--magenta)}
+.opt.bad b{color:var(--white)}
+.fb{min-height:5.5em;border-left:3px solid var(--mint);padding-left:1em}
+
+.dice{grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.6)}
+.dice .d{display:flex;flex-direction:column;gap:calc(var(--u)*1)}
+.dice .letter{font:900 calc(var(--u)*13)/.8 var(--display);color:var(--magenta);letter-spacing:-.05em}
+
+.timer{font:900 calc(var(--u)*15)/.85 var(--display);letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.tbtns{display:flex;gap:8px;flex-wrap:wrap}
+.tbtns button{border:1.5px solid currentColor;padding:.55em 1.1em;font:800 calc(max(13px,var(--u)*1.3))/1 var(--display)}
+.tbtns button:hover{background:var(--white);color:var(--magenta)}
+
+.bignum{font:900 calc(var(--u)*17)/.8 var(--display);letter-spacing:-.06em}
+.bignum small{font-size:.35em;letter-spacing:-.02em}
+
+.check{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.check button{border:1.5px solid rgba(255,255,255,.6);padding:calc(var(--u)*1) calc(var(--u)*1.3);text-align:left;font:600 calc(max(13px,var(--u)*1.45))/1.35 var(--body);display:flex;gap:.6em;align-items:center}
+.check button::before{content:"";width:.9em;height:.9em;border:1.5px solid currentColor;flex:none}
+.check button[aria-pressed="true"]{background:var(--white);color:var(--ink)}
+.check button[aria-pressed="true"]::before{background:var(--magenta);border-color:var(--magenta)}
+.check button.y{border-style:dashed}
+.verdict{padding:calc(var(--u)*2);display:flex;flex-direction:column;gap:calc(var(--u)*1);background:var(--mint);color:var(--ink);transition:background .3s}
+.verdict.red{background:var(--ink);color:var(--white)}
+.verdict.yel{background:#ffd23f;color:var(--ink)}
+.verdict b{font:900 calc(var(--u)*5)/.9 var(--display)}
+
+.prin .cell{justify-content:space-between;border-top-width:3px}
+.prin .h2{font-size:calc(var(--u)*6.2)!important}
+.prin .p{font-size:calc(max(15px,var(--u)*2))}
+.box ul.list li{font-size:calc(max(14px,var(--u)*1.75))}
+.cell .sm{font-size:calc(max(13px,var(--u)*1.5))}
+/* figures */
+.rom{grid-template-columns:1.25fr 1fr;gap:calc(var(--u)*3.5);align-items:stretch}
+.figwrap{position:relative;display:flex;flex-direction:column;justify-content:center;min-width:0;background:
+  radial-gradient(circle at 1px 1px,rgba(255,255,255,.16) 1px,transparent 1.4px) 0 0/9px 9px,var(--ink2)}
+.figwrap svg{width:100%;height:100%;max-height:100%;display:block}
+.figwrap .cnt{position:absolute;left:calc(var(--u)*1.6);bottom:calc(var(--u)*1.4);font:800 calc(max(12px,var(--u)*1.3))/1 var(--display)}
+.figwrap .cnt b{color:var(--mint);font-size:1.6em;font-variant-numeric:tabular-nums}
+.figwrap .vw{position:absolute;left:calc(var(--u)*1.6);top:calc(var(--u)*1.4)}
+.figwrap .legend{position:absolute;right:calc(var(--u)*1.6);bottom:calc(var(--u)*1.4);font:700 calc(max(11px,var(--u)*1.1))/1 var(--display);display:flex;align-items:center;gap:.5em}
+.figwrap .legend::before{content:"";width:.9em;height:.9em;border-radius:50%;background:var(--mint)}
+.romtxt{display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--u)*1.6);min-width:0}
+.warn{border:2px solid var(--magenta);padding:calc(var(--u)*1.3) calc(var(--u)*1.6);font:600 calc(max(13px,var(--u)*1.45))/1.5 var(--body)}
+.warn b{color:var(--magenta);font-family:var(--display);font-weight:900;margin-right:.4em}
+
+.six{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:calc(var(--u)*1.2)}
+.six .fc{display:grid;grid-template-columns:1.15fr 1fr;gap:calc(var(--u)*1);background:var(--ink2);padding:calc(var(--u)*1.2);min-height:0}
+.six .fc svg{width:100%;height:100%;min-height:0}
+.six .fc .tx{display:flex;flex-direction:column;justify-content:space-between;gap:.5em;min-width:0}
+.six .fc .tx .h3{font-size:calc(max(16px,var(--u)*1.9))}
+.six .fc .tx .sm{font-size:calc(max(12px,var(--u)*1.22))}
+.six .fc .tx .rx{font:800 calc(max(12px,var(--u)*1.2))/1.3 var(--display);color:var(--mint)}
+
+.rpe{display:flex;flex-direction:column;gap:calc(var(--u)*1.2)}
+.rpe input{width:100%;accent-color:var(--mint)}
+.rpe .scale{display:grid;grid-template-columns:repeat(11,1fr);gap:3px}
+.rpe .scale i{height:calc(var(--u)*2.4);background:#2a2528}
+.rpe .scale i.f{background:var(--grey)}
+.rpe .scale i.g{background:var(--mint)}
+.rpe .scale i.r{background:var(--magenta)}
+.rpe .say{font:900 calc(var(--u)*4.4)/1 var(--display)}
+
+table.tb{width:100%;border-collapse:collapse;color:inherit;font:600 calc(max(13px,var(--u)*1.5))/1.4 var(--body)}
+table.tb th,table.tb td{text-align:left;padding:calc(var(--u)*1) calc(var(--u)*1.1);border-bottom:1.5px solid currentColor;vertical-align:top}
+table.tb th{font:800 calc(max(12px,var(--u)*1.15))/1.2 var(--display);text-transform:uppercase;opacity:.75}
+table.tb td:first-child{font-weight:900}
+.tbwrap{overflow-x:auto}
+
+.menu2{display:flex;flex-direction:column;gap:calc(var(--u)*1.6)}
+.stack{display:flex;height:calc(var(--u)*22);gap:4px}
+.stack>div{padding:calc(var(--u)*1.1);display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.stack b{font:900 calc(var(--u)*3.4)/.9 var(--display)}
+.stack span{font:700 calc(max(12px,var(--u)*1.3))/1.3 var(--body)}
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:calc(var(--u)*1.2)}
+.flow .arr{font:900 calc(var(--u)*4)/1 var(--display);color:var(--magenta)}
+
+/* index overlay */
+.index{position:fixed;inset:0;z-index:40;background:var(--magenta);display:none;overflow:auto;
+  padding:calc(env(safe-area-inset-top,0px) + 76px) max(18px,env(safe-area-inset-right,0px)) 40px max(18px,env(safe-area-inset-left,0px))}
+.index.on{display:block}
+.index .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px;max-width:1300px;margin:0 auto}
+.index h3{font:900 clamp(24px,3vw,44px)/1 var(--display);margin:0 0 14px;letter-spacing:-.02em}
+.index ol{list-style:none;margin:0;padding:0}
+.index li button{display:grid;grid-template-columns:3.4em 1fr;gap:.6em;width:100%;text-align:left;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.35);font:800 15px/1.3 var(--display)}
+.index li button i{font-style:normal;color:var(--mint)}
+.index li button:hover{color:var(--ink)}
+.index li button.cur{color:var(--ink)}
+
+/* loader + wipe */
+.loader{position:fixed;inset:0;z-index:60;background:var(--magenta);overflow:hidden;transition:transform .8s cubic-bezier(.8,0,.2,1)}
+.loader::before{content:"";position:absolute;inset:-20%;background:radial-gradient(40% 45% at 45% 45%,var(--magenta-deep) 0,transparent 70%);animation:blob 6s ease-in-out infinite alternate}
+.loader .ll,.loader .lr{position:absolute;bottom:14px;font:900 10.5px/1.45 var(--display);text-transform:uppercase;color:var(--mint)}
+.loader .ll{left:14px}.loader .lr{right:14px;text-align:right}
+.loader .bar{position:absolute;left:50%;top:50%;width:3px;height:42px;background:var(--mint);transform:translate(-50%,-50%);animation:blink .5s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.loader.out{transform:translateX(-100%)}
+.wipe{position:fixed;inset:0;z-index:50;pointer-events:none;transform:translateX(101%);display:flex}
+.wipe i{flex:1;background:var(--magenta)}
+.wipe i:last-child{background:var(--ink);flex:.25}
+
+@media (max-width:820px){
+  :root{--u:min(1.9vw,1.2vh)}
+  body{overflow:auto}
+  .slide{overflow-y:auto}
+  .nav{gap:12px;font-size:11px}
+  .nav .hide-s{display:none}
+  .g2,.g3,.g4,.agenda,.split,.case,.rom,.cats,.dice,.story,.six,.stage3{grid-template-columns:1fr!important;grid-template-rows:none!important}
+  .slide>.fill{display:flex;flex-direction:column;gap:20px}
+  .day{grid-template-columns:repeat(4,1fr)}
+  .meta{grid-template-columns:1fr 1fr}
+  .figwrap{min-height:260px}
+  .six .fc{min-height:170px}
+  .check{grid-template-columns:1fr}
+  .timebar,.stack{height:auto;flex-wrap:wrap}
+  .timebar>div,.stack>div{min-height:90px}
+  .flow{grid-template-columns:1fr}
+  .flow .arr{transform:rotate(90deg);justify-self:center}
+  .index .cols{grid-template-columns:1fr}
+  .ind1,.ind2,.ind3{padding-left:0}
+  .hl span.l{white-space:normal}
+  .slide{padding-top:calc(env(safe-area-inset-top,0px) + 84px);padding-bottom:70px}
+  .h2,.hl{overflow-wrap:anywhere}
+}
+@media (prefers-reduced-motion:reduce){
+  .bg-mag::before,.loader::before,.ag li .bar{animation:none}
+}
+</style>
+
+<div class="loader" id="loader" aria-hidden="true"><div class="bar"></div><div class="ll" id="ll"></div><div class="lr" id="lr"></div></div>
+<div class="wipe" id="wipe" aria-hidden="true"><i></i><i></i></div>
+
+<header class="top" id="top">
+  <div class="logo">喜樂園<sup>°</sup><br>積分課<small>失智活動 × 關節肌力</small></div>
+  <nav class="nav" aria-label="章節">
+    <button data-go="s-p1" class="hide-s">[ 課程一 ]</button>
+    <button data-go="s-p2" class="hide-s">[ 課程二 ]</button>
+    <button id="openIndex">[ 目錄 ]</button>
+    <button id="fs" class="hide-s">[ 全螢幕 ]</button>
+  </nav>
+</header>
+<footer class="bottom" id="bottom">
+  <div class="pg">[ <b id="cur">01</b> / <span id="tot">00</span> ] <span id="ttl"></span></div>
+  <div class="arrows"><button id="prev" aria-label="上一頁">←</button><button id="next" aria-label="下一頁">→</button></div>
+</footer>
+<div class="progress" id="progress"></div>
+
+<div class="index" id="index" aria-label="目錄"><div class="cols" id="indexCols"></div></div>
+
+<main class="deck" id="deck">
+
+<!-- 01 cover -->
+<section class="slide bg-mag" id="s-cover" data-title="封面">
+  <div class="fill cover">
+    <div class="lab scr">[ 長照積分課 ] 115 / 11 / 22 (日)</div>
+    <h1 class="hl">
+      <span class="l">有事做，</span>
+      <span class="l ind2"><span class="it cj">才有</span>好日子</span>
+      <span class="l ind1">動得了，</span>
+      <span class="l ind3"><span class="it cj">才走得</span>遠</span>
+    </h1>
+    <div class="meta">
+      <div><span>課程一 13:00–15:00</span>失智症日常活動安排及活動規劃</div>
+      <div><span>課程二 15:10–17:10</span>肢體關節活動與肌力訓練</div>
+      <div><span>地點</span>新北市三重區三和路四段 101-1 號 4 樓</div>
+      <div><span>講師</span>鍾孟修 職能治療師・愛迪樂</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 agenda -->
+<section class="slide bg-black" id="s-agenda" data-title="今天的兩堂課">
+  <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2.4)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">兩堂課，<span class="it cj">一條線</span></h2>
+      <p class="sm" style="max-width:28em;opacity:.8">對象：居服員、督導員。上半場把「陪伴時間」變成有安排的活動，下半場把關節活動與肌力練習放進每次服務。最後合成一份 30 分鐘的居家菜單。</p>
+    </div>
+    <div class="agenda">
+      <div class="ag">
+        <div><div class="lab mint">[ 01 ] 失智症日常活動安排及活動規劃</div><div class="time">13:00<br>–15:00</div></div>
+        <ol>
+          <li><i>[01]</i>為什麼要有活動<span class="bar" style="--w:70px"></span></li>
+          <li><i>[02]</i>看能力：輕・中・重度<span class="bar" style="--w:110px"></span></li>
+          <li><i>[03]</i>生命故事與活動分析<span class="bar" style="--w:150px"></span></li>
+          <li><i>[04]</i>提示階層與一天的節奏<span class="bar" style="--w:90px"></span></li>
+          <li><i>[05]</i>30 分鐘一對一範本<span class="bar" style="--w:130px"></span></li>
+          <li><i>[06]</i>案例、DICE、分組練習<span class="bar" style="--w:100px"></span></li>
+        </ol>
+      </div>
+      <div class="ag">
+        <div><div class="lab mint">[ 02 ] 肢體關節活動與肌力訓練</div><div class="time">15:10<br>–17:10</div></div>
+        <ol>
+          <li><i>[07]</i>不動的代價與 BA11<span class="bar" style="--w:120px"></span></li>
+          <li><i>[08]</i>開始前 30 秒安全檢查<span class="bar" style="--w:80px"></span></li>
+          <li><i>[09]</i>七個關節活動動作<span class="bar" style="--w:160px"></span></li>
+          <li><i>[10]</i>偏癱肩、人工髖要小心<span class="bar" style="--w:95px"></span></li>
+          <li><i>[11]</i>七招坐姿肌力訓練<span class="bar" style="--w:140px"></span></li>
+          <li><i>[12]</i>帶失智長輩動起來<span class="bar" style="--w:105px"></span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 part 1 -->
+<section class="slide bg-black" id="s-p1" data-title="課程一：失智症日常活動" data-glyph="憶">
+  <div class="fill part">
+    <div class="num">01</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="hl" style="font-size:calc(var(--u)*7.4)"><span class="l">失智症</span><span class="l ind1"><span class="it cj">日常</span>活動安排</span><span class="l">及活動規劃</span></h2>
+      <div class="lab right">[ 13:00 — 15:00 ]<br>2 小時・18 頁</div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 why -->
+<section class="slide bg-mag" data-title="沒事做的一天最難熬">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab">[ 為什麼 ] 活動不是加分題</div>
+      <h2 class="hl" style="font-size:calc(var(--u)*7.2)"><span class="l">沒事做</span><span class="l ind1">的一天，</span><span class="l"><span class="it cj">最</span>難熬</span></h2>
+    </div>
+    <div class="col">
+      <div class="g2" style="gap:calc(var(--u)*1.6)">
+        <div class="cell"><span class="idx">[ 沒事做 ]</span><p class="p"><b>無聊、孤單、聽不懂</b></p><p class="sm">一天坐著看電視、不知道現在要做什麼</p></div>
+        <div class="cell"><span class="idx">[ 就會出現 ]</span><p class="p"><b>躁動、遊走、重複問</b></p><p class="sm">吵著回家、翻東西、黃昏特別不安</p></div>
+      </div>
+      <div class="box w">
+        <span class="lab mag">[ 指引怎麼說 ]</span>
+        <p class="p">英國 NICE 失智照護指引（NG97, 2018）建議：提供<b>依個人喜好量身安排</b>的各種活動，來維持身心安適。活動是最基本、也最先做的非藥物照護。</p>
+      </div>
+      <p class="p"><b>居服員每週來的那幾個小時，</b>可能是長輩一週裡最有機會「做點事」的時間。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 role -->
+<section class="slide bg-paper" data-title="活動藏在服務項目裡">
+  <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.4)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">活動，<span class="it cj">藏在</span>你本來就在做的服務裡</h2>
+      <div class="lab">[ 長照 2.0 照顧組合 ]</div>
+    </div>
+    <div class="g4">
+      <div class="box"><span class="lab mint">[ BA02 ]</span><div class="h3">基本日常照顧</div><p class="sm">梳頭、穿衣、刷牙時，讓長輩自己做能做的那一步，就是活動。</p></div>
+      <div class="box"><span class="lab mint">[ BA11 ]</span><div class="h3">肢體關節活動</div><p class="sm">下半場的主角。關節活動與坐姿運動，可以配音樂、配數數。</p></div>
+      <div class="box"><span class="lab mint">[ BA18 ]</span><div class="h3">安全看視</div><p class="sm">看著他不出事之外，也可以一起摺衣服、看老照片。</p></div>
+      <div class="box m"><span class="lab">[ BA20 ]</span><div class="h3">陪伴服務</div><p class="sm">最適合放進有安排的活動：聊天、唱歌、桌上活動、散步。</p></div>
+    </div>
+    <p class="sm" style="opacity:.75">實際能做的項目與時間，以個案的照顧計畫和督導的安排為準；有疑問先問督導，不要自己加項目。</p>
+  </div>
+</section>
+
+<!-- 06 stages -->
+<section class="slide bg-black" data-title="先看他還會什麼">
+  <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2.6)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">先看他<span class="it cj">還會</span>什麼</h2>
+      <p class="sm" style="max-width:26em;opacity:.8">同一個「摺衣服」，輕度的人可以自己摺完放進衣櫃，重度的人可能只能摸毛巾、對摺一次。活動要跟著能力走。</p>
+    </div>
+    <div class="g3 stage3">
+      <div class="stg"><span class="idx">[ 輕度 ]</span><div class="big">你陪，<br>他主導</div>
+        <dl><dt>還會</dt><dd>大部分日常自己來，複雜的事（理財、搭車、煮一桌菜）開始出錯</dd>
+        <dt>適合</dt><dd>備餐、園藝、記帳、唱歌、桌遊、散步買東西</dd>
+        <dt>你的角色</dt><dd>給選擇、留時間，別替他做</dd></dl></div>
+      <div class="stg"><span class="idx">[ 中度 ]</span><div class="big">你帶，<br>他跟著做</div>
+        <dl><dt>還會</dt><dd>熟悉的單一動作：擦、摺、撿、搓、配對；舊歌和舊事</dd>
+        <dt>適合</dt><dd>撿菜、摺毛巾、配襪子、老照片、拍手唱歌</dd>
+        <dt>你的角色</dt><dd>拆成一步一步，一次只給一個指令</dd></dl></div>
+      <div class="stg"><span class="idx">[ 重度 ]</span><div class="big">你給，<br>他感受</div>
+        <dl><dt>還會</dt><dd>感覺仍在：觸覺、聲音、味道、被握住的手</dd>
+        <dt>適合</dt><dd>手部按摩、聽熟悉的歌、聞香、握柔軟的布、曬太陽</dd>
+        <dt>你的角色</dt><dd>慢、輕、靠近，看表情決定要不要繼續</dd></dl></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 principles -->
+<section class="slide bg-mag" data-title="安排活動的四個原則">
+  <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2)">
+    <div class="lab">[ 四個原則 ] 每次安排前，在心裡過一遍</div>
+    <div class="g4 prin" style="align-items:stretch">
+      <div class="cell"><span class="idx">[ 01 ]</span><div class="h2" style="font-size:calc(var(--u)*4.6)">用他<br><span class="it cj">還會的</span></div><p class="p">從以前的工作、拿手的家事開始，不從「新東西」開始。</p></div>
+      <div class="cell"><span class="idx">[ 02 ]</span><div class="h2" style="font-size:calc(var(--u)*4.6)">拆成<br><span class="it cj">小步驟</span></div><p class="p">一次只說一件事：「我們先把毛巾攤開。」做完再說下一步。</p></div>
+      <div class="cell"><span class="idx">[ 03 ]</span><div class="h2" style="font-size:calc(var(--u)*4.6)">讓他<br><span class="it cj">做成功</span></div><p class="p">寧可簡單一點。做錯不糾正，直接示範對的，或悄悄幫他補好。</p></div>
+      <div class="cell"><span class="idx">[ 04 ]</span><div class="h2" style="font-size:calc(var(--u)*4.6)">當大人<br><span class="it cj">對待</span></div><p class="p">不用哄小孩的語氣與幼兒教材；用「請你幫我」，讓他覺得自己有用。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 life story -->
+<section class="slide bg-paper" data-title="生命故事卡">
+  <div class="fill split" style="grid-template-columns:.8fr 2fr">
+    <div class="col">
+      <div class="lab">[ 生命故事卡 ] 活動從哪裡來</div>
+      <h2 class="h2" style="font-size:calc(var(--u)*4.6)">認識他，<br><span class="it cj">活動</span>就有了</h2>
+      <p class="p">問家屬、看家裡的照片和擺設，把答案寫在一張卡上，放在聯絡簿裡給下一位居服員看。</p>
+      <p class="sm" style="opacity:.7">右邊的例子：王阿嬤（化名），在菜市場賣菜 40 年。</p>
+    </div>
+    <div class="story">
+      <div class="q"><span class="idx">[ 01 ] 以前的工作</span><div class="h3">做什麼？做多久？</div><p class="ex">賣菜 40 年 → <b>撿菜、綁菜、算錢、秤重</b></p></div>
+      <div class="q"><span class="idx">[ 02 ] 最拿手的事</span><div class="h3">被誇過什麼？</div><p class="ex">滷肉很有名 → <b>聊做法、聞八角、備料</b></p></div>
+      <div class="q"><span class="idx">[ 03 ] 喜歡的歌與戲</span><div class="h3">聽什麼會跟著哼？</div><p class="ex">歌仔戲、〈望春風〉 → <b>聽歌、打拍子</b></p></div>
+      <div class="q"><span class="idx">[ 04 ] 家鄉與吃的</span><div class="h3">從哪裡來？愛吃什麼？</div><p class="ex">雲林人、愛吃花生 → <b>剝花生、聊家鄉</b></p></div>
+      <div class="q"><span class="idx">[ 05 ] 每天的習慣</span><div class="h3">幾點起床？先做什麼？</div><p class="ex">天亮就起床、先拜拜 → <b>早上安排固定小儀式</b></p></div>
+      <div class="q"><span class="idx">[ 06 ] 會生氣的事</span><div class="h3">什麼話、什麼事不要碰？</div><p class="ex">討厭被說「老了」 → <b>用「請妳教我」開場</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 activity analysis -->
+<section class="slide bg-black" data-title="活動分析與難度調整">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab">[ 活動分析 ] 職能治療師最常用的工具</div>
+      <h2 class="h2">同一件事，<br><span class="it cj">調</span>三種難度</h2>
+      <p class="p">把活動拆開，看哪一步卡住，就調那一步：物品數量、選擇多少、步驟長短、提示多寡。</p>
+      <div class="seg" role="group" aria-label="難度">
+        <button id="lv0" aria-pressed="false">輕鬆</button>
+        <button id="lv1" aria-pressed="true">剛好</button>
+        <button id="lv2" aria-pressed="false">挑戰</button>
+      </div>
+    </div>
+    <div class="col" style="justify-content:flex-start;gap:calc(var(--u)*2)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:1em;border-top:2px solid var(--white);padding-top:calc(var(--u)*1.2)">
+        <div class="h3">摺衣服</div><div class="lab mint" id="lvTag">[ 中度失智 ]</div>
+      </div>
+      <ol class="steps" id="lvSteps"></ol>
+      <div class="box w" style="margin-top:auto"><span class="lab mag">[ 怎麼調 ]</span><p class="sm" id="lvHow"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 prompting -->
+<section class="slide bg-mag" data-title="提示階層">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab">[ 提示階層 ] 協助從最少開始</div>
+      <h2 class="hl" style="font-size:calc(var(--u)*6.6)"><span class="l">先等，</span><span class="l ind1">再說，</span><span class="l"><span class="it cj">最後</span>才動手</span></h2>
+      <p class="p">每往上一格，長輩自己做的部分就少一點。做得到的那一格，就停在那一格。</p>
+      <div class="tbtns"><button id="pDown">← 少一點協助</button><button id="pUp">多一點協助 →</button></div>
+    </div>
+    <div class="ladder" id="ladder">
+      <button class="rung"><b>01</b><span><em>等待 5–10 秒</em>他可能只是需要時間想。不催、不搶著做。</span></button>
+      <button class="rung"><b>02</b><span><em>口語提示</em>「阿嬤，毛巾拿起來。」短句、一次一件事。</span></button>
+      <button class="rung"><b>03</b><span><em>手勢指示</em>指著毛巾、做出拿起來的手勢。</span></button>
+      <button class="rung"><b>04</b><span><em>示範</em>坐在旁邊同方向，自己先摺一條給他看。</span></button>
+      <button class="rung"><b>05</b><span><em>輕觸引導</em>手輕放在他的手背或手肘，帶出第一個動作。</span></button>
+      <button class="rung"><b>06</b><span><em>部分協助</em>你做前半段，留最後一步讓他完成。</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- 11 day rhythm -->
+<section class="slide bg-black" data-title="一天的節奏">
+  <div class="fill" style="grid-template-rows:auto auto 1fr;gap:calc(var(--u)*2.2)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">把你來的時段，<span class="it cj">放進</span>他的一天</h2>
+      <div class="lab">[ 點時段看建議 ] <span class="mint">■</span> 精神好 <span class="mag">■</span> 容易不安</div>
+    </div>
+    <div class="day" id="day"></div>
+    <div class="daydetail"><div class="t" id="dayT"></div><div><div class="h3" id="dayH"></div><p class="p" id="dayP" style="margin-top:.6em"></p></div></div>
+  </div>
+</section>
+
+<!-- 12 activity bank -->
+<section class="slide bg-paper" data-title="生活就是活動">
+  <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2.4)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">生活，<span class="it cj">就是</span>活動</h2>
+      <p class="sm" style="max-width:30em">不必準備教具。家裡現有的東西、他每天本來就會做的事，最容易進入狀況。</p>
+    </div>
+    <div class="cats" style="display:grid">
+      <div class="cat"><div class="h3"><small>[ 家務 ]</small>讓他覺得有用</div><ul class="list"><li>摺毛巾、摺衣服</li><li>撿菜、剝豆子、剝花生</li><li>擦桌子、擦杯子</li><li>配對襪子</li><li>澆花、拔小草</li></ul></div>
+      <div class="cat"><div class="h3"><small>[ 認知 ]</small>動動腦但不考試</div><ul class="list"><li>看老照片聊往事</li><li>翻日曆、說今天幾號</li><li>數零錢、算菜錢</li><li>撲克牌配顏色、配數字</li><li>猜老歌下一句</li></ul></div>
+      <div class="cat"><div class="h3"><small>[ 感官 ]</small>重度也做得到</div><ul class="list"><li>手部按摩、擦乳液</li><li>聞香：橘子皮、薑、咖啡</li><li>聽年輕時的歌</li><li>摸不同的布料</li><li>窗邊曬太陽</li></ul></div>
+      <div class="cat"><div class="h3"><small>[ 身體 ]</small>接下半場</div><ul class="list"><li>社區散步、到門口取信</li><li>坐姿體操</li><li>丟沙包、拍氣球</li><li>邊唱歌邊拍手</li><li>站起來拿東西</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 30-min template -->
+<section class="slide bg-mag" data-title="30 分鐘一對一範本">
+  <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.4)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">一次 30 分鐘，<br><span class="it cj">四段</span>就夠</h2>
+      <div class="lab right">[ 一對一範本 ]<br>適用居家陪伴、安全看視</div>
+    </div>
+    <div class="timebar">
+      <div style="flex:5"><b>5<small>分</small></b><span>打招呼＋定向</span></div>
+      <div style="flex:15"><b>15<small>分</small></b><span>主活動：一件他熟悉的事</span></div>
+      <div style="flex:5"><b>5<small>分</small></b><span>收尾聊天</span></div>
+      <div style="flex:5"><b>5<small>分</small></b><span>記錄</span></div>
+    </div>
+    <div class="g4">
+      <div class="cell"><span class="idx">[ 開場這樣說 ]</span><p class="sm">「阿嬤，我是小美，今天禮拜天，外面出太陽喔。」先叫名字、說自己是誰、說今天。</p></div>
+      <div class="cell"><span class="idx">[ 主活動 ]</span><p class="sm">只做一件事，照前面的難度調整。看他的臉：笑、專心就延長；皺眉、想走就換。</p></div>
+      <div class="cell"><span class="idx">[ 收尾 ]</span><p class="sm">「今天妳摺了 8 條毛巾，好整齊，謝謝妳幫忙。」說出他做到的事。</p></div>
+      <div class="cell"><span class="idx">[ 記錄 ]</span><p class="sm">寫下做了什麼、做多久、心情、需要哪一格提示，給督導和下一位同事。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 case -->
+<section class="slide bg-black" data-title="案例：黃昏說要回家">
+  <div class="fill case">
+    <div class="col">
+      <div class="lab mint">[ 案例 ] 王阿嬤（化名），82 歲，中度失智</div>
+      <h2 class="h2">下午四點，<br>她又說<span class="it cj">要回家</span>煮飯</h2>
+      <p class="p">以前開小吃店，每天下午都在備料。現在一到傍晚就在門口走來走去，拿著包包說「我要回去煮飯，客人在等」。</p>
+      <div class="fb" id="caseFb"><p class="sm" style="opacity:.7">點右邊的選項，看看哪一個比較好。</p></div>
+    </div>
+    <div class="col" style="justify-content:center;gap:calc(var(--u)*1.2)">
+      <button class="opt" data-k="a"><b>A</b><span>跟她說清楚：「阿嬤，這裡就是妳家，妳已經沒開店了。」</span></button>
+      <button class="opt" data-k="b"><b>B</b><span>「客人要來了喔？那我們先來撿菜、準備小菜。」拿出四季豆一起撿。</span></button>
+      <button class="opt" data-k="c"><b>C</b><span>打開電視讓她坐著看，等家人下班回來。</span></button>
+      <button class="opt" data-k="d"><b>D</b><span>把大門鎖好、包包收起來，不讓她拿。</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- 15 DICE -->
+<section class="slide bg-paper" data-title="行為出現時：DICE">
+  <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.2)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">行為出現時，<span class="it cj">先想</span>四步</h2>
+      <div class="lab">[ DICE 模式 ] Kales 等人，2014</div>
+    </div>
+    <div class="dice" style="display:grid">
+      <div class="d"><div class="letter">D</div><div class="h3">描述</div><p class="sm">什麼時候、在哪裡、做了什麼、持續多久？拍照或寫下來。<br><b>例：</b>每天 16:00 後在門口走，約 40 分鐘。</p></div>
+      <div class="d"><div class="letter">I</div><div class="h3">找原因</div><p class="sm">身體（痛、便祕、想上廁所）、環境（太吵、太暗）、作息、需求沒被滿足。<br><b>例：</b>以前這個時間在備料。</p></div>
+      <div class="d"><div class="letter">C</div><div class="h3">想辦法</div><p class="sm">跟家屬、督導一起想，給一件有意義的事來代替。<br><b>例：</b>15:45 先安排撿菜、擺碗筷。</p></div>
+      <div class="d"><div class="letter">E</div><div class="h3">看效果</div><p class="sm">做一兩週，比較前後次數與時間，沒效就回頭再找原因。<br><b>例：</b>走動從 40 分鐘降到 10 分鐘。</p></div>
+    </div>
+    <p class="sm" style="opacity:.7">突然變得很混亂、很想睡或很激動，可能是生病（感染、脫水、藥物），請立刻回報督導，不要只當成失智行為。</p>
+  </div>
+</section>
+
+<!-- 16 safety -->
+<section class="slide bg-mag" data-title="什麼時候該停">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab">[ 安全 ] 看臉色比看進度重要</div>
+      <h2 class="hl" style="font-size:calc(var(--u)*7)"><span class="l">他不想，</span><span class="l ind1"><span class="it cj">就</span>停</span></h2>
+      <p class="p">活動是為了讓他舒服，不是為了做完。停下來、換一件事、或只是陪著坐，都是對的選擇。</p>
+    </div>
+    <div class="g2" style="grid-template-rows:1fr 1fr;gap:calc(var(--u)*1.6)">
+      <div class="box"><span class="lab mint">[ 停或換的訊號 ]</span><ul class="list"><li>皺眉、推開、手揮開</li><li>一直想站起來離開</li><li>說「我不要」「好累」</li><li>打哈欠、眼神放空</li></ul></div>
+      <div class="box"><span class="lab mint">[ 物品安全 ]</span><ul class="list"><li>剪刀、刀具用完收走</li><li>小東西會被放進嘴巴</li><li>清潔劑別放桌上</li><li>假水果、假食物也可能被咬</li></ul></div>
+      <div class="box"><span class="lab mint">[ 時間 ]</span><ul class="list"><li>一個活動 15–20 分鐘</li><li>中間給喝水、上廁所</li><li>傍晚安排安靜熟悉的事</li></ul></div>
+      <div class="box w"><span class="lab mag">[ 一句話 ]</span><p class="p"><b>不爭辯、不糾正、不考試。</b>先接住情緒，再帶到活動。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 record -->
+<section class="slide bg-black" data-title="一行紀錄">
+  <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.2)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">寫一行，<span class="it cj">下一個人</span>就不用重來</h2>
+      <div class="lab">[ 活動紀錄 ] 交給督導與下一位同事</div>
+    </div>
+    <div class="tbwrap"><table class="tb">
+      <thead><tr><th>日期</th><th>活動</th><th>做多久</th><th>心情</th><th>提示到第幾格</th><th>下次調整</th></tr></thead>
+      <tbody>
+        <tr><td>11/22</td><td>摺毛巾 8 條</td><td>15 分</td><td>笑、會聊天</td><td>[04] 示範</td><td>加一條褲子試試</td></tr>
+        <tr><td>11/24</td><td>撿四季豆</td><td>20 分</td><td>專心</td><td>[02] 口語</td><td>15:45 先做，看黃昏走動有沒有少</td></tr>
+        <tr><td>11/26</td><td>看老照片</td><td>5 分</td><td>皺眉、想離開</td><td>—</td><td>改聽歌仔戲</td></tr>
+      </tbody>
+    </table></div>
+    <div class="g3">
+      <div class="cell"><span class="idx">[ 督導看 ]</span><p class="sm">哪些活動有效、哪個時段比較穩，排進照顧計畫。</p></div>
+      <div class="cell"><span class="idx">[ 同事看 ]</span><p class="sm">換人服務時，照紀錄做，長輩不用重新適應。</p></div>
+      <div class="cell"><span class="idx">[ 家屬看 ]</span><p class="sm">知道週末自己也可以怎麼陪。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 18 group practice -->
+<section class="slide bg-mag" data-title="分組練習">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab">[ 分組練習 ] 4–5 人一組</div>
+      <h2 class="h2">幫你手上的<br>個案，<span class="it cj">排一次</span></h2>
+      <ol class="steps">
+        <li>寫出他的三件生命故事（工作、拿手的事、喜歡的歌）</li>
+        <li>選一件生活活動，拆成 4–6 步，訂出「輕鬆／剛好／挑戰」</li>
+        <li>排成 30 分鐘：開場、主活動、收尾、記錄怎麼寫</li>
+      </ol>
+    </div>
+    <div class="col" style="justify-content:center;align-items:flex-start">
+      <div class="lab">[ 計時 ]</div>
+      <div class="timer" id="t1">08:00</div>
+      <div class="tbtns" data-timer="t1" data-sec="480"><button data-a="go">開始</button><button data-a="pause">暫停</button><button data-a="reset">重來</button><button data-a="add">＋1 分</button></div>
+      <p class="sm" style="opacity:.8">時間到請兩組分享：你選了什麼活動？哪一步最可能卡住？</p>
+    </div>
+  </div>
+</section>
+
+<!-- 19 summary 1 -->
+<section class="slide bg-black" data-title="課程一小結＋休息">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab mint">[ 課程一小結 ]</div>
+      <div class="g2" style="gap:calc(var(--u)*1.6)">
+        <div class="cell"><span class="idx">[ 01 ]</span><p class="p"><b>先看能力</b>：輕度你陪、中度你帶、重度你給</p></div>
+        <div class="cell"><span class="idx">[ 02 ]</span><p class="p"><b>從故事找活動</b>：他以前做什麼，就從那裡開始</p></div>
+        <div class="cell"><span class="idx">[ 03 ]</span><p class="p"><b>拆步驟、少協助</b>：讓他做成功</p></div>
+        <div class="cell"><span class="idx">[ 04 ]</span><p class="p"><b>30 分鐘四段</b>，寫一行紀錄</p></div>
+      </div>
+    </div>
+    <div class="col" style="justify-content:center">
+      <div class="lab">[ 休息 ] 15:00 — 15:10</div>
+      <div class="timer" id="t2">10:00</div>
+      <div class="tbtns" data-timer="t2" data-sec="600"><button data-a="go">開始</button><button data-a="pause">暫停</button><button data-a="reset">重來</button></div>
+      <p class="p">休息一下，等等穿方便活動的衣服，兩人一組練習。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 20 part 2 -->
+<section class="slide bg-black" id="s-p2" data-title="課程二：關節活動與肌力" data-glyph="動">
+  <div class="fill part">
+    <div class="num">02</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="hl" style="font-size:calc(var(--u)*7.4)"><span class="l">肢體</span><span class="l ind1"><span class="it cj">關節</span>活動</span><span class="l">與肌力訓練</span></h2>
+      <div class="lab right">[ 15:10 — 17:10 ]<br>2 小時・22 頁</div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 cost of immobility -->
+<section class="slide bg-mag" data-title="不動的代價">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab">[ 不動的代價 ]</div>
+      <div class="bignum">1<span style="opacity:.6"> ~ </span>1.5<small>%</small></div>
+      <p class="p"><b>完全臥床時，每天流失的肌力。</b>這是復健領域常被引用的估計值；臥床一兩週，起身就明顯變吃力。</p>
+    </div>
+    <div class="col">
+      <div class="g2" style="gap:calc(var(--u)*1.6)">
+        <div class="cell"><span class="idx">[ 關節 ]</span><p class="p"><b>變緊、卡住</b></p><p class="sm">手肘伸不直、手指握成拳、腳尖往下垂，穿衣和清潔都變難。</p></div>
+        <div class="cell"><span class="idx">[ 肌肉 ]</span><p class="p"><b>變少、沒力</b></p><p class="sm">站不起來、走不穩，跌倒風險上升。</p></div>
+        <div class="cell"><span class="idx">[ 皮膚 ]</span><p class="p"><b>壓傷</b></p><p class="sm">同一姿勢太久，骨頭突出處容易破皮。</p></div>
+        <div class="cell"><span class="idx">[ 其他 ]</span><p class="p"><b>便祕、睡不好</b></p><p class="sm">心情也跟著低落，失智長輩更容易不安。</p></div>
+      </div>
+      <div class="box w"><span class="lab mag">[ 所以 ]</span><p class="p">每次服務動一動關節、練一下站起來，是在<b>保住他現在還能做的事</b>。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 22 BA11 do/don't -->
+<section class="slide bg-paper" data-title="BA11 做與不做">
+  <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.2)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2"><span class="it cj">BA11</span> 肢體關節活動：做與不做</h2>
+      <div class="lab">[ 居服員的範圍 ]</div>
+    </div>
+    <div class="g2">
+      <div class="box"><span class="lab mint">[ 做 ]</span>
+        <ul class="list"><li>依照顧計畫，協助各關節做全範圍的活動</li><li>陪長輩做坐姿運動、站起來練習</li><li>做之前看狀況，做之中看表情</li><li>記下次數、疼痛、異常，回報督導</li><li>把治療師教的居家動作，照樣陪他做</li></ul></div>
+      <div class="box m"><span class="lab">[ 不做 ]</span>
+        <ul class="list"><li>硬扳到會痛、聽到聲音還繼續</li><li>處理紅、腫、熱、痛的關節</li><li>骨折、剛開刀處，沒有醫囑就動</li><li>自己加新的「治療」動作或按摩手法</li><li>長輩明確拒絕時還堅持要做</li></ul></div>
+    </div>
+    <p class="sm" style="opacity:.75">不確定能不能做，就先不做，回報督導，請治療師（如居家復能、專業服務）來評估。</p>
+  </div>
+</section>
+
+<!-- 23 three ROM -->
+<section class="slide bg-black" data-title="三種關節活動">
+  <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2.6)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">誰出力？<span class="it cj">三種</span>關節活動</h2>
+      <p class="sm" style="max-width:28em;opacity:.8">同一個動作，依長輩能出多少力來選。能自己做的，就讓他自己做。</p>
+    </div>
+    <div class="g3 stage3">
+      <div class="stg"><span class="idx">[ PROM ] 被動</span><div class="big">你出<br>全部的力</div><dl><dt>適合</dt><dd>臥床、昏睡、癱瘓那一側，自己完全動不了</dd><dt>目的</dt><dd>維持關節不變緊、促進循環</dd></dl></div>
+      <div class="stg"><span class="idx">[ AAROM ] 協助主動</span><div class="big">他出力，<br>你補一點</div><dl><dt>適合</dt><dd>動得了但動不完全、沒力舉到頂</dd><dt>做法</dt><dd>「我們一起舉」，他先出力，你在後半段托一下</dd></dl></div>
+      <div class="stg"><span class="idx">[ AROM ] 主動</span><div class="big">他自己<br>做完</div><dl><dt>適合</dt><dd>能聽懂、能自己動的長輩</dd><dt>做法</dt><dd>你示範、數數、陪做；做得好就接肌力訓練</dd></dl></div>
+    </div>
+  </div>
+</section>
+
+<!-- 24 safety check -->
+<section class="slide bg-mag" data-title="開始前 30 秒檢查">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab">[ 開始前 30 秒 ] 點出今天的狀況</div>
+      <div class="check" id="check">
+        <button data-l="r">胸痛、胸悶</button>
+        <button data-l="r">很喘、說話接不上氣</button>
+        <button data-l="r">頭暈、冒冷汗、臉色發白</button>
+        <button data-l="r">關節突然紅、腫、熱、痛</button>
+        <button data-l="r">剛跌倒，或懷疑骨折</button>
+        <button data-l="r">發燒、精神突然變差</button>
+        <button data-l="y" class="y">血壓比平常高很多</button>
+        <button data-l="y" class="y">昨晚沒睡、今天很累</button>
+        <button data-l="y" class="y">某個關節有點痛</button>
+        <button data-l="y" class="y">剛吃飽不到半小時</button>
+      </div>
+      <p class="sm" style="opacity:.85">血壓數字以醫師交代的範圍為準；常見的參考是休息時收縮壓超過 180 或舒張壓超過 110，先不運動。</p>
+    </div>
+    <div class="verdict" id="verdict" style="justify-content:flex-start"><span class="lab">[ 結果 ]</span><b id="vB">可以開始</b><p class="p" id="vP">從輕的開始，邊做邊看表情和呼吸。</p><div style="margin-top:auto;border-top:2px solid currentColor;padding-top:calc(var(--u)*1.2)"><span class="lab">[ 做的過程中也要看 ]</span><ul class="list" style="margin-top:.6em"><li>突然喘、臉色變白 → 停</li><li>說會痛、皺眉縮手 → 減少範圍</li><li>做完 10 分鐘還很累 → 下次減量</li></ul></div></div>
+  </div>
+</section>
+
+<!-- 25 handling principles -->
+<section class="slide bg-paper" data-title="手法五原則">
+  <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.2)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">手怎麼放？<span class="it cj">五個</span>原則</h2>
+      <div class="lab">[ 每個動作 5–10 下 ]</div>
+    </div>
+    <div class="cats" style="grid-template-columns:repeat(5,1fr);display:grid">
+      <div class="cat"><div class="h3"><small>[ 01 ]</small>托上、托下</div><p class="sm">一手托關節上方、一手托下方，讓整段肢體被撐住，不要只拉手腕或腳踝。</p></div>
+      <div class="cat"><div class="h3"><small>[ 02 ]</small>慢慢來</div><p class="sm">去程數 1、2、3，回程也數 1、2、3。快速甩動容易拉傷。</p></div>
+      <div class="cat"><div class="h3"><small>[ 03 ]</small>到緊，不到痛</div><p class="sm">感覺有阻力、他說「緊」就停在那裡，停 2–3 秒再回來。</p></div>
+      <div class="cat"><div class="h3"><small>[ 04 ]</small>看臉不看手</div><p class="sm">眼睛看他的表情。皺眉、縮手、叫出聲，馬上減少範圍。</p></div>
+      <div class="cat"><div class="h3"><small>[ 05 ]</small>先說再動</div><p class="sm">「我要把妳的手抬起來喔。」失智長輩被突然碰到會害怕、會抗拒。</p></div>
+    </div>
+    <p class="sm">接下來七頁是仰躺的關節活動。<span class="mag" style="font-weight:900">●</span> 綠點是你的手要托的位置。</p>
+  </div>
+</section>
+
+<div id="romSlot"></div>
+
+<!-- special care -->
+<section class="slide bg-mag" data-title="這三種情況特別小心">
+  <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2.2)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">這三種情況，<span class="it cj">特別</span>小心</h2>
+      <div class="lab">[ 有治療師的指示，就照指示 ]</div>
+    </div>
+    <div class="g3">
+      <div class="box"><span class="lab mint">[ 中風・偏癱的肩膀 ]</span><div class="h3">不拉、不甩、不硬舉</div><ul class="list"><li>不要拉患側的手把人拉起來或翻身</li><li>舉手時一手托住肩胛骨，讓肩胛跟著轉</li><li>只做到不痛的範圍；肩膀已經痛，請治療師評估</li><li>平常把患側手臂放在枕頭上撐好</li></ul></div>
+      <div class="box"><span class="lab mint">[ 人工髖關節 ]</span><div class="h3">手術後依醫囑</div><ul class="list"><li>常見的提醒：彎曲不超過 90°</li><li>腿不交叉、不越過身體中線</li><li>膝蓋和腳尖朝上，不往內轉</li><li>不同手術方式限制不同，照醫院給的衛教單</li></ul></div>
+      <div class="box"><span class="lab mint">[ 骨質疏鬆・失智 ]</span><div class="h3">輕、慢、先說</div><ul class="list"><li>骨鬆：不扭轉、不用力壓、不硬扳</li><li>失智：先說、再示範、才動手</li><li>他抗拒時停下來，換時間或換方式</li><li>疼痛說不清楚，看表情與縮手</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- strength principles -->
+<section class="slide bg-black" data-title="肌力訓練怎麼算夠">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab mint">[ 肌力訓練原則 ] WHO 2020 身體活動指引</div>
+      <h2 class="h2">有點累，<br><span class="it cj">剛剛好</span></h2>
+      <div class="g3" style="gap:calc(var(--u)*1.4)">
+        <div class="cell"><span class="idx">[ 頻率 ]</span><p class="p"><b>每週 2 天以上</b></p><p class="sm">長者至少每週兩天做肌力訓練</p></div>
+        <div class="cell"><span class="idx">[ 次數 ]</span><p class="p"><b>8–12 下 × 1–3 組</b></p><p class="sm">組間休息 1–2 分鐘</p></div>
+        <div class="cell"><span class="idx">[ 漸進 ]</span><p class="p"><b>做得輕鬆就加</b></p><p class="sm">先加次數，再加重量</p></div>
+      </div>
+    </div>
+    <div class="rpe">
+      <div class="lab">[ 自覺費力 0–10 ] 拉拉看</div>
+      <div class="say" id="rpeSay">5・有點累</div>
+      <div class="scale" id="rpeScale"></div>
+      <label for="rpe" class="sm" style="opacity:.7">問長輩：「現在有多累？0 是沒感覺，10 是累到不行。」</label>
+      <input type="range" id="rpe" min="0" max="10" value="5">
+      <p class="p" id="rpeP"></p>
+    </div>
+  </div>
+</section>
+
+<!-- sit to stand featured -->
+<section class="slide bg-black" data-title="坐到站：最重要的一招">
+  <div class="fill rom">
+    <div class="figwrap"><span class="lab vw">[ 側面 ] 坐姿・主動</span><svg class="fig" data-anim="sts" viewBox="0 0 200 170" role="img" aria-label="坐到站動畫"></svg><div class="cnt">[ 第 <b class="c">1</b> / 10 下 ]</div></div>
+    <div class="romtxt">
+      <div><div class="lab mint">[ 肌力 01 ] 最重要的一招</div><h2 class="h2" style="margin-top:.3em">坐到站<br><span class="it cj">站到坐</span></h2></div>
+      <ol class="steps"><li>坐到椅子前半，腳往後收到膝蓋正下方</li><li>身體往前傾，「鼻子超過腳尖」</li><li>腳踩地站起來，站直、眼睛看前面</li><li>屁股往後找椅子，數 1、2、3 慢慢坐下</li></ol>
+      <div class="g2" style="gap:calc(var(--u)*1.2)"><div class="cell"><span class="idx">[ 減難度 ]</span><p class="sm">用高一點的椅子、雙手扶扶手</p></div><div class="cell"><span class="idx">[ 加難度 ]</span><p class="sm">雙手抱胸、坐下時放慢到 3 秒</p></div></div>
+      <div class="warn"><b>為什麼</b>上廁所、上床、出門都要站起來。美國 CDC 防跌評估 STEADI 也用「30 秒坐站」來看跌倒風險。</div>
+    </div>
+  </div>
+</section>
+
+<!-- six strength -->
+<section class="slide bg-black" data-title="六招坐姿肌力">
+  <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*1.6)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2" style="font-size:calc(var(--u)*4.4)">再加六招，<span class="it cj">坐著</span>就能練</h2>
+      <div class="lab">[ 肌力 02–07 ] 每招 8–12 下</div>
+    </div>
+    <div class="six" style="display:grid" id="six"></div>
+  </div>
+</section>
+
+<!-- home equipment -->
+<section class="slide bg-paper" data-title="家裡的東西就是器材">
+  <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.2)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">家裡的東西，<span class="it cj">就是</span>器材</h2>
+      <div class="lab">[ 不用買 ] 加減難度看這張</div>
+    </div>
+    <div class="tbwrap"><table class="tb">
+      <thead><tr><th>東西</th><th>拿來練</th><th>減難度</th><th>加難度</th></tr></thead>
+      <tbody>
+        <tr><td>寶特瓶裝水</td><td>手臂上舉、手肘彎曲</td><td>空瓶或半瓶（約 0.3 公斤）</td><td>600 毫升約 0.6 公斤 → 1.5 公升約 1.5 公斤</td></tr>
+        <tr><td>有扶手的椅子</td><td>坐到站、扶椅背踮腳</td><td>椅墊加高、扶扶手</td><td>不扶、放慢坐下</td></tr>
+        <tr><td>毛巾</td><td>擰毛巾練握力、雙手拉開練肩背</td><td>乾毛巾、只握</td><td>濕毛巾擰乾</td></tr>
+        <tr><td>枕頭或抱枕</td><td>坐姿夾膝（大腿內側）</td><td>輕夾 3 秒</td><td>用力夾 5 秒、做 2 組</td></tr>
+        <tr><td>彈力帶或舊絲襪</td><td>坐姿踢腿、手臂外拉</td><td>拉短一點、鬆一點</td><td>拉長、握短</td></tr>
+      </tbody>
+    </table></div>
+    <div class="g3">
+      <div class="box"><span class="lab mint">[ 椅子 ]</span><p class="sm">靠牆放、不會滑的椅子，不要用有輪子的辦公椅。</p></div>
+      <div class="box"><span class="lab mint">[ 重量 ]</span><p class="sm">能做 12 下還輕鬆才加重；手腕無力的人用毛巾包住瓶子比較好握。</p></div>
+      <div class="box m"><span class="lab">[ 收好 ]</span><p class="sm">失智長輩做完，彈力帶、小物品收起來，避免纏繞或誤食。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- leading PwD -->
+<section class="slide bg-mag" data-title="帶失智長輩運動">
+  <div class="fill split">
+    <div class="col">
+      <div class="lab">[ 帶失智長輩運動 ]</div>
+      <h2 class="hl" style="font-size:calc(var(--u)*6.4)"><span class="l">不要說</span><span class="l ind1">「運動」，</span><span class="l"><span class="it cj">說</span>「幫我」</span></h2>
+      <p class="p">「阿公，幫我把杯子拿過去。」站起來、走兩步、坐下，就是一組坐到站。</p>
+    </div>
+    <div class="g2" style="grid-template-rows:1fr 1fr;gap:calc(var(--u)*1.6)">
+      <div class="cell"><span class="idx">[ 01 ] 面對面示範</span><p class="p">坐在他正前方，像照鏡子一樣做，他跟著學。</p></div>
+      <div class="cell"><span class="idx">[ 02 ] 一次一個指令</span><p class="p">「腳抬起來」做完，再說「放下」。不要一次講三件事。</p></div>
+      <div class="cell"><span class="idx">[ 03 ] 數數、唱歌</span><p class="p">用他熟悉的歌打拍子，一首歌就是一組。</p></div>
+      <div class="cell"><span class="idx">[ 04 ] 做完說謝謝</span><p class="p">「你好有力氣，謝謝你幫忙。」讓他下次還願意。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- combined menu -->
+<section class="slide bg-black" data-title="合起來：30 分鐘居家菜單">
+  <div class="fill menu2" style="display:flex">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">合起來：<span class="it cj">動腦＋動手</span>30 分鐘</h2>
+      <div class="lab right">[ 範例 ] 王阿嬤，週一、三、五 15:30</div>
+    </div>
+    <div class="stack">
+      <div style="flex:5;background:var(--ink2)"><b>5′</b><span>打招呼、今天幾號、量血壓前坐好</span></div>
+      <div style="flex:5;background:var(--mint);color:var(--ink)"><b>5′</b><span>關節活動：肩、肘、手腕、踝各 5 下</span></div>
+      <div style="flex:8;background:var(--magenta)"><b>8′</b><span>肌力：坐到站 10 下 × 2 組、坐姿踢腿 10 下</span></div>
+      <div style="flex:8;background:var(--white);color:var(--ink)"><b>8′</b><span>生活活動：撿四季豆、擺碗筷，備晚餐</span></div>
+      <div style="flex:4;background:var(--ink2)"><b>4′</b><span>收尾聊天、記錄</span></div>
+    </div>
+    <div class="g3" style="flex:1">
+      <div class="cell"><span class="idx">[ 為什麼這樣排 ]</span><p class="sm">先動身體讓精神好，再做她熟悉的備料，剛好接上她以前 16:00 的習慣，減少黃昏想回家。</p></div>
+      <div class="cell"><span class="idx">[ 坐到站藏在哪 ]</span><p class="sm">「幫我把菜籃拿過來」「去拿碗」──起身、走、坐下，練了也不覺得在運動。</p></div>
+      <div class="cell"><span class="idx">[ 怎麼看有沒有效 ]</span><p class="sm">每兩週看紀錄：坐到站次數、黃昏走動時間、心情。交給督導調整計畫。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- observation & report -->
+<section class="slide bg-paper" data-title="觀察與回報">
+  <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.2)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
+      <h2 class="h2">看到不對，<span class="it cj">馬上</span>說</h2>
+      <div class="lab">[ 觀察與回報 ]</div>
+    </div>
+    <div class="g4">
+      <div class="cell"><span class="idx">[ 疼痛 ]</span><div class="h3">0–10 分</div><p class="sm">做之前、做之後各問一次。說不清楚的人看表情：皺眉、咬牙、縮手。</p></div>
+      <div class="cell"><span class="idx">[ 量 ]</span><div class="h3">次數 × 組數</div><p class="sm">坐到站做了幾下、要不要扶。比上次少很多要注意。</p></div>
+      <div class="cell"><span class="idx">[ 身體 ]</span><div class="h3">喘、臉色、皮膚</div><p class="sm">說話接不上氣、臉色發白、腳踝新出現的腫或破皮。</p></div>
+      <div class="cell"><span class="idx">[ 關節 ]</span><div class="h3">比上次緊嗎</div><p class="sm">手肘伸不直、手指打不開、腳尖垂下去，範圍變小就回報。</p></div>
+    </div>
+    <div class="flow">
+      <div class="box"><span class="lab mint">[ 你 ]</span><p class="sm">停下來、讓他休息，寫下看到的狀況</p></div>
+      <div class="arr">→</div>
+      <div class="box"><span class="lab mint">[ 督導 ]</span><p class="sm">判斷是否通知家屬、就醫，調整服務</p></div>
+      <div class="arr">→</div>
+      <div class="box m"><span class="lab">[ 個管・治療師 ]</span><p class="sm">需要時申請居家復能或專業服務來評估</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- final summary -->
+<section class="slide bg-mag" data-title="總結">
+  <div class="fill split">
+    <h2 class="hl" style="font-size:calc(var(--u)*8.8);align-self:center"><span class="l">有事做，</span><span class="l ind1">動得了，</span><span class="l"><span class="it cj">日子才</span></span><span class="l ind2">好過</span></h2>
+    <div class="col" style="justify-content:center;gap:calc(var(--u)*2)">
+      <div class="cell"><span class="idx">[ 課程一 ] 活動</span><p class="p">看能力、找故事、拆步驟、少協助、30 分鐘四段、寫一行紀錄。</p></div>
+      <div class="cell"><span class="idx">[ 課程二 ] 身體</span><p class="p">先檢查 30 秒；托上托下、到緊不到痛；坐到站每次都練；看表情、馬上回報。</p></div>
+      <div class="cell"><span class="idx">[ 回去就做 ]</span><p class="p">下一次服務，挑一位長輩，試一次 30 分鐘菜單。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- thanks -->
+<section class="slide bg-black" data-title="謝謝・問與答" data-glyph="謝">
+  <div class="fill part">
+    <div class="h2" style="font-size:calc(var(--u)*13);align-self:center">問與答<br><span class="it cj mint">謝謝大家</span></div>
+    <div class="meta">
+      <div><span>講師</span>鍾孟修 職能治療師</div>
+      <div><span>品牌</span>愛迪樂</div>
+      <div><span>課程</span>喜樂園 長照積分課</div>
+      <div><span>日期</span>115 / 11 / 22 (日)</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(()=>{
+/* ================= figure rig ================= */
+const NS="http://www.w3.org/2000/svg";
+const R=Math.PI/180, dir=a=>[Math.cos(a*R),Math.sin(a*R)];
+const add=(p,l,a)=>{const d=dir(a);return [p[0]+l*d[0],p[1]+l*d[1]]};
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e}
+const W="#ffffff",M="#39d9b6",G="rgba(255,255,255,.32)",PROP="rgba(57,217,182,.75)";
+function line(g,a,b,w,c,op){el("line",{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:c||W,"stroke-width":w,"stroke-linecap":"round",opacity:op??1},g)}
+function dot(g,p){el("circle",{cx:p[0],cy:p[1],r:7,fill:"none",stroke:M,"stroke-width":1.5,opacity:.6},g);el("circle",{cx:p[0],cy:p[1],r:4,fill:M},g)}
+function props(g,list){
+  for(const pr of list||[]){
+    if(pr==="bed"){el("rect",{x:14,y:126,width:178,height:7,fill:PROP},g);el("rect",{x:14,y:110,width:30,height:10,rx:4,fill:"none",stroke:PROP,"stroke-width":2},g)}
+    if(pr==="chair"){line(g,[60,128],[108,128],3,PROP);line(g,[62,128],[62,158],3,PROP);line(g,[106,128],[106,158],3,PROP);line(g,[62,128],[62,70],3,PROP)}
+    if(pr==="chairFront"){line(g,[146,62],[146,158],3,PROP);line(g,[146,112],[186,112],3,PROP);line(g,[184,112],[184,158],3,PROP)}
+    if(pr==="ground"){line(g,[10,159],[190,159],1.5,"rgba(255,255,255,.35)")}
+    if(pr==="bedTop"){el("rect",{x:40,y:8,width:120,height:156,rx:6,fill:"none",stroke:PROP,"stroke-width":2},g);el("rect",{x:72,y:14,width:56,height:16,rx:5,fill:"none",stroke:PROP,"stroke-width":1.5},g)}
+  }
+}
+function drawSide(g,p,o){
+  const H=[p.hx,p.hy],S=add(H,52,p.t),HC=add(S,17,p.t+(p.n||0));
+  const far=(a,b)=>p[a]!==undefined?p[a]:p[b];
+  // far limbs
+  const E2=add(S,30,far("ua2","ua")),W2=add(E2,28,far("fa2","fa"));
+  const K2=add(H,36,far("th2","th")),A2=add(K2,34,far("sh2","sh")),T2=add(A2,13,far("ft2","ft"));
+  line(g,H,K2,9,G);line(g,K2,A2,8,G);line(g,A2,T2,6,G);
+  line(g,S,E2,8,G);line(g,E2,W2,7,G);
+  // body
+  line(g,H,S,13,W);
+  el("circle",{cx:HC[0],cy:HC[1],r:12,fill:W},g);
+  const K=add(H,36,p.th),A=add(K,34,p.sh),T=add(A,13,p.ft),Hl=add(A,4,p.ft+180);
+  line(g,H,K,10,W);line(g,K,A,9,W);line(g,Hl,T,7,W);
+  const E=add(S,30,p.ua),Wr=add(E,28,p.fa);
+  line(g,S,E,9,W);line(g,E,Wr,8,W);
+  if((o.props||[]).includes("bottle")){const b=add(Wr,6,p.fa);el("rect",{x:b[0]-4,y:b[1]-9,width:8,height:18,rx:2,fill:M,transform:`rotate(${p.fa+90} ${b[0]} ${b[1]})`},g)}
+  const pts={S,E,W:Wr,H,K,A,T};
+  (o.support||[]).forEach(k=>dot(g,pts[k]));
+}
+function drawFront(g,p,o){
+  const sh=[[84,52],[116,52]],hp=[[93,108],[107,108]];
+  const lE=add(sh[0],30,90+(p.la||0)),lW=add(lE,28,90+(p.la||0));
+  const rE=add(sh[1],30,90-(p.ra||0)),rW=add(rE,28,90-(p.ra||0));
+  const lK=add(hp[0],30,90+(p.ll||0)),lA=add(lK,30,90+(p.ll||0)),lT=add(lA,8,90+(p.ll||0)+(-90));
+  const rK=add(hp[1],30,90-(p.rl||0)),rA=add(rK,30,90-(p.rl||0));
+  line(g,[100,52],[100,108],18,W);line(g,sh[0],sh[1],10,W);line(g,hp[0],hp[1],10,W);
+  el("circle",{cx:100,cy:34,r:12,fill:W},g);
+  line(g,sh[0],lE,9,W);line(g,lE,lW,8,W);line(g,sh[1],rE,9,W);line(g,rE,rW,8,W);
+  line(g,hp[0],lK,10,W);line(g,lK,lA,9,W);line(g,hp[1],rK,10,W);line(g,rK,rA,9,W);
+  const pts={rE,rW,rK,rA};(o.support||[]).forEach(k=>dot(g,pts[k]));
+  // midline hint
+  if(o.midline)el("line",{x1:100,y1:110,x2:100,y2:168,stroke:"#e8106f","stroke-width":1.5,"stroke-dasharray":"3 3"},g);
+}
+function drawHand(g,p,o){
+  const c=p.c||0, w=p.w||0;
+  const root=el("g",{transform:`rotate(${-w} 100 132)`},g);
+  line(root,[100,150],[100,132],22,W); // forearm stub
+  el("rect",{x:76,y:76,width:48,height:58,rx:14,fill:W},root);
+  [82,94,106,118].forEach((x,i)=>{
+    const L=[26,30,28,22][i]*(1-.72*c);
+    line(root,[x,80],[x,80-L],9,W);
+    if(c>.3)line(root,[x-4,80-L+2],[x+4,80-L+2],3,"#1a1719",.5*c);
+  });
+  const th=add([78,118],22*(1-.35*c),-150+c*70);line(root,[78,118],th,10,W);
+  if((o.props||[]).includes("towel")){el("rect",{x:66,y:96-c*4,width:68,height:16,rx:6,fill:M,opacity:.85},root)}
+  (o.support||[]).forEach(()=>dot(g,[100,146]));
+}
+const SEAT={hx:90,hy:122,t:-90,ua:80,fa:20,th:0,sh:90,ft:0};
+const STAND={hx:120,hy:87,t:-88,ua:90,fa:90,th:85,sh:90,ft:0};
+const LIE={hx:110,hy:118,t:180,ua:0,fa:0,ua2:0,fa2:0,th:0,sh:0,ft:-90,th2:0,sh2:0,ft2:-90};
+const ANIMS={
+  shFlex:{mode:"side",props:["bed"],support:["E","W"],frames:[{...LIE},{...LIE,ua:-165,fa:-165}]},
+  shAbd:{mode:"front",props:["bedTop"],support:["rE","rW"],frames:[{la:8,ra:8,ll:3,rl:3},{la:8,ra:88,ll:3,rl:3}]},
+  elbow:{mode:"side",props:["bed"],support:["E","W"],frames:[{...LIE},{...LIE,fa:-135}]},
+  hand:{mode:"hand",support:["x"],frames:[{c:0,w:0},{c:1,w:0},{c:0,w:0},{c:0,w:38},{c:0,w:-38}]},
+  hipKnee:{mode:"side",props:["bed"],support:["K","A"],frames:[{...LIE},{...LIE,th:-78,sh:36,ft:-54}]},
+  hipAbd:{mode:"front",props:["bedTop"],support:["rK","rA"],midline:true,frames:[{la:8,ra:8,ll:3,rl:3},{la:8,ra:8,ll:3,rl:32}]},
+  ankle:{mode:"side",props:["bed"],support:["A","T"],frames:[{...LIE},{...LIE,ft:-114},{...LIE},{...LIE,ft:-62}]},
+  sts:{mode:"side",props:["chair","ground"],frames:[{...SEAT,ua:60,fa:0},{...SEAT,t:-48,ua:10,fa:0,hx:94},{...STAND,ua:60,fa:0}],dur:3200},
+  kick:{mode:"side",props:["chair","ground"],frames:[{...SEAT},{...SEAT,sh:6,ft:-84}]},
+  march:{mode:"side",props:["chair","ground"],frames:[{...SEAT},{...SEAT,th:-28,sh:72,ft:-18}]},
+  heel:{mode:"side",props:["chairFront","ground"],frames:[{...STAND,hx:100,ua:60,fa:0},{...STAND,hx:100,hy:79,ua:56,fa:-8,ft:28}]},
+  toe:{mode:"side",props:["chair","ground"],frames:[{...SEAT},{...SEAT,ft:-32}]},
+  arm:{mode:"side",props:["chair","ground","bottle"],frames:[{...SEAT,ua:90,fa:90},{...SEAT,ua:-88,fa:-88}]},
+  grip:{mode:"hand",props:["towel"],frames:[{c:0,w:0},{c:1,w:-10}]}
+};
+const ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
+function poseAt(A,t){ // t in [0,1) over full cycle (forward then back)
+  const f=A.frames,n=f.length-1;let u=t*2;if(u>1)u=2-u; // ping-pong
+  const pos=u*n,i=Math.min(n-1,Math.floor(pos)),k=ease(pos-i);
+  const a=f[i],b=f[i+1],o={};for(const key in a)o[key]=a[key]+((b[key]??a[key])-a[key])*k;return o;
+}
+function render(svg,A,t){
+  while(svg.firstChild)svg.removeChild(svg.firstChild);
+  const g=el("g",{},svg);props(g,A.props);
+  const p=poseAt(A,t);
+  if(A.mode==="side")drawSide(g,p,A);else if(A.mode==="front")drawFront(g,p,A);else drawHand(g,p,A);
+}
+
+/* ================= generated slides ================= */
+const ROMS=[
+ {k:"shFlex",n:"01",t:"肩關節",i:"往上舉",v:"[ 側面 ] 仰躺・屈曲",s:["一手托手肘、一手握手腕，大拇指朝上","從身體旁邊慢慢往上舉，經過胸前，往頭頂方向","到「緊」就停，停 2–3 秒，再慢慢放回身旁"],w:"中風患側只做到不痛的範圍，舉高時另一手托肩胛骨。肩膀已經痛，先回報。"},
+ {k:"shAbd",n:"02",t:"肩關節",i:"往外打開",v:"[ 由上往下看 ] 仰躺・外展",s:["一手托手肘、一手握手腕，手臂貼著床面","往外側滑開，掌心慢慢轉向天花板","打開到緊的位置，停 2–3 秒，再滑回身旁"],w:"偏癱的肩膀，治療師沒教過就不要超過肩膀高度（約 90°）。"},
+ {k:"elbow",n:"03",t:"手肘",i:"彎與伸",v:"[ 側面 ] 仰躺・屈曲伸直",s:["一手托住手肘，一手握住手腕","慢慢彎起來，讓手掌靠近肩膀","再慢慢伸直；可加上掌心朝上、朝下轉"],w:"伸到最直時不要再往下壓，手肘會受傷。"},
+ {k:"hand",n:"04",t:"手腕與手指",i:"翹、彎、握、開",v:"[ 手部 ] 坐或躺都可以",s:["一手握住前臂撐穩","手腕往上翹、往下彎，各停 2–3 秒","手指一起握拳、再張開；大拇指畫圈"],w:"手指握得很緊的人，先讓手腕往下彎，手指比較容易打開；一根一根慢慢開，不要硬扳。"},
+ {k:"hipKnee",n:"05",t:"髖與膝",i:"一起彎起來",v:"[ 側面 ] 仰躺・屈曲",s:["一手托膝蓋下方，一手托腳跟","把膝蓋慢慢往胸口方向推，腳跟滑向屁股","到緊就停 2–3 秒，再慢慢放直"],w:"人工髖關節手術後，常見限制是彎曲不超過 90°，依醫院衛教單。不要扭轉。"},
+ {k:"hipAbd",n:"06",t:"髖關節",i:"往外打開",v:"[ 由上往下看 ] 仰躺・外展",s:["一手托膝蓋下方，一手托腳跟","整條腿貼著床往外滑開，膝蓋和腳尖朝上","滑回來時停在中間，不越過身體中線"],w:"紅色虛線是中線。人工髖關節的人，腿不要交叉、不要越過中線。"},
+ {k:"ankle",n:"07",t:"腳踝",i:"勾與踩",v:"[ 側面 ] 仰躺・背屈蹠屈",s:["一手握住腳跟，前臂貼著腳底","用前臂把腳掌往頭的方向推（勾腳），停 10 秒","再往下踩，像踩油門"],w:"長期臥床最容易「垂足」，以後站不穩、穿不了鞋。每天都要做。"}
+];
+const slot=document.getElementById("romSlot");
+ROMS.forEach(r=>{
+  const s=document.createElement("section");s.className="slide bg-black";s.dataset.title=`關節活動 ${r.n}：${r.t}${r.i}`;
+  s.innerHTML=`<div class="fill rom">
+    <div class="figwrap"><span class="lab vw">${r.v}</span><svg class="fig" data-anim="${r.k}" viewBox="0 0 200 170" role="img" aria-label="${r.t}${r.i}動畫"></svg><div class="cnt">[ 第 <b class="c">1</b> / 10 下 ]</div><div class="legend">你的手托這裡</div></div>
+    <div class="romtxt"><div><div class="lab mint">[ 關節活動 ${r.n} / 07 ]</div><h2 class="h2" style="margin-top:.3em">${r.t}<br><span class="it cj">${r.i}</span></h2></div>
+    <ol class="steps">${r.s.map(x=>`<li>${x}</li>`).join("")}</ol>
+    <div class="warn"><b>注意</b>${r.w}</div></div></div>`;
+  slot.before(s);
+});
+slot.remove();
+const SIX=[
+ {k:"kick",n:"02",t:"坐姿踢腿",d:"膝蓋伸直、腳尖勾起，停 2 秒再放下。",rx:"左右各 10 下 × 2 組",x:"加：腳踝綁沙包或彈力帶"},
+ {k:"march",n:"03",t:"坐姿抬膝",d:"像原地踏步，膝蓋往上抬，背不要往後靠。",rx:"左右交替 20 下",x:"加：配一首歌踏完"},
+ {k:"heel",n:"04",t:"扶椅背踮腳",d:"雙手扶穩椅背，腳跟抬起、慢慢放下。",rx:"10 下 × 2 組",x:"站不穩改坐著踮"},
+ {k:"toe",n:"05",t:"抬腳尖",d:"腳跟踩地，腳尖往上抬，練小腿前側防絆倒。",rx:"10 下 × 2 組",x:"加：停 3 秒"},
+ {k:"arm",n:"06",t:"寶特瓶上舉",d:"雙手握水瓶，從腿上舉到頭頂再放下。",rx:"10 下 × 2 組",x:"肩痛改舉到胸前"},
+ {k:"grip",n:"07",t:"擰毛巾",d:"雙手握毛巾往反方向擰，再放鬆。",rx:"10 次",x:"加：用濕毛巾擰乾"}
+];
+document.getElementById("six").innerHTML=SIX.map(s=>`<div class="fc"><svg class="fig" data-anim="${s.k}" viewBox="40 22 155 142" role="img" aria-label="${s.t}動畫"></svg><div class="tx"><div><div class="lab mint">[ ${s.n} ]</div><div class="h3">${s.t}</div></div><p class="sm">${s.d}</p><div><div class="rx">${s.rx}</div><p class="sm" style="opacity:.7">${s.x}</p></div></div></div>`).join("");
+
+/* ================= deck ================= */
+const slides=[...document.querySelectorAll(".slide")];
+slides.forEach((s,i)=>{if(!s.id)s.id="s"+(i+1)});
+const N=slides.length;let cur=0,busy=false;
+const $=id=>document.getElementById(id);
+$("tot").textContent=String(N).padStart(2,"0");
+const pad=n=>String(n).padStart(2,"0");
+
+// index overlay + loader lists
+const half=Math.ceil(N/2);
+const mk=(from,to,head)=>`<div><h3>${head}</h3><ol>${slides.slice(from,to).map((s,j)=>`<li><button data-i="${from+j}"><i>[${pad(from+j+1)}]</i>${s.dataset.title}</button></li>`).join("")}</ol></div>`;
+const p2=slides.findIndex(s=>s.id==="s-p2");
+$("indexCols").innerHTML=mk(0,p2,"[ 課程一 ] 失智症日常活動")+mk(p2,N,"[ 課程二 ] 關節活動與肌力");
+$("indexCols").addEventListener("click",e=>{const b=e.target.closest("button");if(b){closeIndex();go(+b.dataset.i)}});
+$("ll").innerHTML=slides.slice(0,half).map((s,i)=>`[${pad(i+1)}] ${s.dataset.title}`).reverse().join("<br>");
+$("lr").innerHTML=slides.slice(half).map((s,i)=>`${s.dataset.title} [${pad(half+i+1)}]`).join("<br>");
+function openIndex(){$("index").classList.add("on");$("index").querySelectorAll("button[data-i]").forEach(b=>b.classList.toggle("cur",+b.dataset.i===cur))}
+function closeIndex(){$("index").classList.remove("on")}
+$("openIndex").onclick=()=>$("index").classList.contains("on")?closeIndex():openIndex();
+
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function show(i){
+  slides.forEach((s,j)=>s.classList.toggle("on",j===i));
+  cur=i;const s=slides[i];
+  $("cur").textContent=pad(i+1);$("ttl").textContent=s.dataset.title;
+  $("progress").style.width=((i+1)/N*100)+"%";
+  const dark=!s.classList.contains("bg-paper");
+  $("top").style.color=dark?"":"var(--ink)";$("bottom").style.color=dark?"":"var(--ink)";
+  document.querySelector(".logo small").style.color=dark?"":"var(--ink)";
+  document.querySelectorAll(".nav [data-go]").forEach(b=>b.classList.toggle("on",(b.dataset.go==="s-p1"&&i>=1&&i<p2)||(b.dataset.go==="s-p2"&&i>=p2)));
+  try{history.replaceState(null,"","#"+s.id)}catch(e){}
+  s.querySelectorAll(".scr").forEach(scramble);
+  if(s.dataset.glyph)halftone(s);
+  s.scrollTop=0;
+}
+function go(i){
+  i=Math.max(0,Math.min(N-1,i));if(i===cur||busy)return;
+  if(reduce){show(i);return}
+  busy=true;const w=$("wipe"),dirn=i>cur?1:-1;
+  const a=w.animate([{transform:`translateX(${101*dirn}%)`},{transform:"translateX(0)"}],{duration:300,easing:"cubic-bezier(.8,0,.2,1)",fill:"forwards"});
+  a.onfinish=()=>{show(i);const b=w.animate([{transform:"translateX(0)"},{transform:`translateX(${-101*dirn}%)`}],{duration:340,easing:"cubic-bezier(.8,0,.2,1)",fill:"forwards"});b.onfinish=()=>{busy=false}};
+}
+$("next").onclick=()=>go(cur+1);$("prev").onclick=()=>go(cur-1);
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(slides.findIndex(s=>s.id===b.dataset.go)));
+$("fs").onclick=()=>{try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}};
+addEventListener("keydown",e=>{
+  if(e.target.tagName==="INPUT")return;
+  if(["ArrowRight","PageDown"," "].includes(e.key)){e.preventDefault();go(cur+1)}
+  else if(["ArrowLeft","PageUp"].includes(e.key)){e.preventDefault();go(cur-1)}
+  else if(e.key==="Home")go(0);else if(e.key==="End")go(N-1);
+  else if(e.key==="Escape")closeIndex();else if(e.key==="m"||e.key==="M")openIndex();
+});
+let tx=null;addEventListener("touchstart",e=>{tx=e.touches[0].clientX},{passive:true});
+addEventListener("touchend",e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>60)go(cur+(dx<0?1:-1));tx=null},{passive:true});
+
+// scramble
+const CH="▚▞█▓▒░[]#01/—";
+function scramble(node){
+  if(reduce)return;const orig=node.dataset.o||(node.dataset.o=node.textContent);let f=0;
+  const t=setInterval(()=>{f++;node.textContent=[...orig].map((c,i)=>c===" "?" ":(i<f*1.6?c:CH[(Math.random()*CH.length)|0])).join("");if(f*1.6>=orig.length){clearInterval(t);node.textContent=orig}},38);
+}
+// halftone glyph
+function halftone(s){
+  let cv=s.querySelector("canvas.halftone");
+  const w=s.clientWidth,h=s.clientHeight;if(!w||!h)return;
+  if(!cv){cv=document.createElement("canvas");cv.className="halftone";s.prepend(cv)}
+  if(cv.dataset.sz===w+"x"+h)return;cv.dataset.sz=w+"x"+h;
+  const dpr=Math.min(2,devicePixelRatio||1);cv.width=w*dpr;cv.height=h*dpr;cv.style.width=w+"px";cv.style.height=h+"px";
+  const off=document.createElement("canvas"),sc=.25;off.width=Math.ceil(w*sc);off.height=Math.ceil(h*sc);
+  const o=off.getContext("2d");o.fillStyle="#000";o.fillRect(0,0,off.width,off.height);
+  const gr=o.createRadialGradient(off.width*.68,off.height*.45,0,off.width*.68,off.height*.45,off.width*.55);
+  gr.addColorStop(0,"rgba(255,255,255,.35)");gr.addColorStop(1,"rgba(255,255,255,0)");o.fillStyle=gr;o.fillRect(0,0,off.width,off.height);
+  o.filter="blur("+Math.max(1,Math.round(off.width*.004))+"px)";o.fillStyle="#fff";o.textAlign="center";o.textBaseline="middle";
+  o.font=`900 ${Math.round(off.height*.92)}px "Noto Sans TC",sans-serif`;o.fillText(s.dataset.glyph,off.width*.68,off.height*.52);
+  const d=o.getImageData(0,0,off.width,off.height).data;
+  const c=cv.getContext("2d");c.scale(dpr,dpr);c.fillStyle="rgba(255,255,255,.5)";
+  const step=Math.max(6,Math.round(w/170));
+  for(let y=step/2;y<h;y+=step)for(let x=step/2;x<w;x+=step){
+    const ix=((Math.floor(y*sc)*off.width)+Math.floor(x*sc))*4,l=d[ix]/255;
+    if(l>.04){c.beginPath();c.arc(x,y,step*.5*Math.sqrt(l),0,6.283);c.fill()}
+  }
+}
+addEventListener("resize",()=>{const s=slides[cur];if(s.dataset.glyph)halftone(s)});
+
+// figure animation loop
+const figs=[...document.querySelectorAll("svg.fig")];
+const t0=performance.now();
+function loop(now){
+  const s=slides[cur];
+  s.querySelectorAll("svg.fig").forEach(svg=>{
+    const A=ANIMS[svg.dataset.anim];const dur=A.dur||2600;
+    const el=(now-t0)/dur;const t=reduce?0.25:el%1;render(svg,A,t);
+    const c=svg.parentElement.querySelector(".c");if(c)c.textContent=reduce?1:(Math.floor(el)%10)+1;
+  });
+  requestAnimationFrame(loop);
+}
+figs.forEach(svg=>render(svg,ANIMS[svg.dataset.anim],.25));
+requestAnimationFrame(loop);
+
+/* ================= interactions ================= */
+// difficulty
+const LV=[
+ {tag:"[ 重度 ]",steps:["只放一條小毛巾在桌上","你示範對摺一次，請他跟著摺","把手放在他手上，一起壓平","「謝謝你，摺得好平。」"],how:"物品只留一條、步驟只剩一步、提示到第 04–05 格；重點是摸到、做到、被謝謝。"},
+ {tag:"[ 中度 ]",steps:["桌上放 5 條毛巾，一次只拿一條給他","「攤開」→「對摺」→「再對摺」，一次說一步","摺好的放進籃子，你在旁邊一起摺","數一數：「我們摺了 5 條！」"],how:"只摺毛巾（四方形最簡單）、你一條一條遞、口語加示範（第 02–04 格）。"},
+ {tag:"[ 輕度 ]",steps:["一籃剛收的衣服，請他先分：上衣、褲子、毛巾","自己決定怎麼摺，你只在卡住時提示","依家人分開放：「這是兒子的、這是我的」","收進衣櫃抽屜，順便聊衣服的故事"],how:"加入分類與決定、步驟拉長、提示只到第 01–02 格；讓他當「主人」。"}
+];
+const lvBtns=[$("lv0"),$("lv1"),$("lv2")];
+function setLv(i){lvBtns.forEach((b,j)=>b.setAttribute("aria-pressed",j===i));const L=LV[i];$("lvTag").textContent=L.tag;$("lvSteps").innerHTML=L.steps.map(x=>`<li>${x}</li>`).join("");$("lvHow").textContent=L.how}
+lvBtns.forEach((b,i)=>b.onclick=()=>setLv(i));setLv(1);
+
+// ladder
+const rungs=[...document.querySelectorAll("#ladder .rung")];let lad=0;
+function setLad(i){lad=Math.max(0,Math.min(rungs.length-1,i));rungs.forEach((r,j)=>{r.classList.toggle("on",j===lad);r.classList.toggle("past",j<lad)})}
+rungs.forEach((r,i)=>r.onclick=()=>setLad(i));$("pUp").onclick=()=>setLad(lad+1);$("pDown").onclick=()=>setLad(lad-1);setLad(0);
+
+// day
+const DAY=[
+ {t:"07–09",h:"起床、盥洗、早餐",p:"照他的老習慣排順序。刷牙、梳頭讓他自己來，你只遞東西。",c:""},
+ {t:"09–11",h:"精神最好：主要活動",p:"最適合需要專心的事：撿菜、摺衣、老照片、散步買東西、肌力訓練。",c:"hot"},
+ {t:"11–12",h:"一起備午餐",p:"洗菜、擺碗筷、試味道。讓他覺得「這餐有我幫忙」。",c:"hot"},
+ {t:"12–14",h:"午餐、午休",p:"午睡不要太久（約 30–60 分鐘），睡太多晚上容易醒。",c:""},
+ {t:"14–16",h:"出門曬太陽",p:"白天曬到光，晚上比較好睡。散步、到門口拿信、陽台澆花。",c:"hot"},
+ {t:"16–18",h:"黃昏：容易不安",p:"很多長輩這時開始想回家、找人。提早開燈，安排安靜熟悉的事：撿菜、聽老歌、手部按摩。",c:"warn"},
+ {t:"18–21",h:"晚餐、洗澡、放鬆",p:"活動量降下來，避免太刺激的電視節目，洗澡時間固定。",c:""},
+ {t:"21–",h:"睡前固定儀式",p:"同樣的順序：上廁所、擦乳液、關燈、說晚安。可預期就比較安心。",c:""}
+];
+$("day").innerHTML=DAY.map((d,i)=>`<button class="${d.c}" data-i="${i}" aria-pressed="false"><b>${d.t}</b><span>${d.h}</span></button>`).join("");
+function setDay(i){[...$("day").children].forEach((b,j)=>b.setAttribute("aria-pressed",j===i));$("dayT").textContent=DAY[i].t;$("dayH").textContent=DAY[i].h;$("dayP").textContent=DAY[i].p}
+$("day").onclick=e=>{const b=e.target.closest("button");if(b)setDay(+b.dataset.i)};setDay(5);
+
+// case
+const FB={
+ a:{ok:false,h:"容易吵起來",p:"跟她爭「這裡是妳家」，她只會更急、更覺得沒人懂她。事實對她來說不重要，感覺才重要。"},
+ b:{ok:true,h:"這個最好",p:"先接住她的感覺（客人要來了），再給她一件熟悉、有意義的事。備料剛好是她以前每天這時間在做的事。"},
+ c:{ok:false,h:"可能撐不久",p:"被動看電視，她的焦慮還在，常常過一會兒又起來找包包。可以當作做完活動之後的休息。"},
+ d:{ok:false,h:"越擋越急",p:"鎖門、收包包會讓她覺得被關住，更容易推門、生氣。安全要顧，但要先轉移注意力。"}
+};
+document.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".opt").forEach(x=>x.classList.remove("good","bad"));
+  const f=FB[b.dataset.k];b.classList.add(f.ok?"good":"bad");
+  $("caseFb").innerHTML=`<div class="h3 ${f.ok?"mint":"mag"}">${b.dataset.k.toUpperCase()}・${f.h}</div><p class="sm" style="margin-top:.4em">${f.p}</p>`;
+});
+
+// timers
+document.querySelectorAll("[data-timer]").forEach(g=>{
+  const out=$(g.dataset.timer),base=+g.dataset.sec;let left=base,iv=null;
+  const draw=()=>out.textContent=pad(Math.floor(left/60))+":"+pad(left%60);
+  g.onclick=e=>{const a=e.target.dataset.a;if(!a)return;
+    if(a==="go"&&!iv)iv=setInterval(()=>{left=Math.max(0,left-1);draw();if(!left){clearInterval(iv);iv=null;out.style.color="var(--mint)"}},1000);
+    if(a==="pause"){clearInterval(iv);iv=null}
+    if(a==="reset"){clearInterval(iv);iv=null;left=base;out.style.color="";draw()}
+    if(a==="add"){left+=60;draw()}};
+  draw();
+});
+
+// safety check
+const chk=[...document.querySelectorAll("#check button")];
+function verdict(){
+  const on=chk.filter(b=>b.getAttribute("aria-pressed")==="true");
+  const v=$("verdict");v.classList.remove("red","yel");
+  if(on.some(b=>b.dataset.l==="r")){v.classList.add("red");$("vB").textContent="今天不做";$("vP").textContent="讓他休息、記下狀況，馬上回報督導；胸痛、很喘、疑似骨折請依緊急流程聯絡家屬或就醫。"}
+  else if(on.length){v.classList.add("yel");$("vB").textContent="減量、先問";$("vP").textContent="只做輕的關節活動、減少次數，痛的關節避開；做完記錄並告訴督導。"}
+  else{$("vB").textContent="可以開始";$("vP").textContent="從輕的開始，邊做邊看表情和呼吸。"}
+}
+chk.forEach(b=>{b.setAttribute("aria-pressed","false");b.onclick=()=>{b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")!=="true");verdict()}});
+
+// RPE
+const RS=["沒感覺","非常輕鬆","很輕鬆","輕鬆","還好","有點累","有點累","累","很累","非常累","累到不行"];
+$("rpeScale").innerHTML="<i></i>".repeat(11);
+function rpe(){const v=+$("rpe").value;$("rpeSay").textContent=v+"・"+RS[v];
+  [...$("rpeScale").children].forEach((x,i)=>{x.className=i<=v?(v>=8?"r":(v>=5?"g":"f")):""});
+  $("rpeP").textContent=v<=3?"太輕鬆了：可以多做幾下，或加一點重量。":v<=6?"剛剛好：還能說話、有點喘，這就是要的強度。":"太累了：減少次數或重量，休息一下。說不出話就停。"}
+$("rpe").oninput=rpe;rpe();
+
+/* ================= start ================= */
+const h=location.hash.slice(1),start=/^p\d+$/.test(h)?Math.min(N-1,+h.slice(1)-1):Math.max(0,slides.findIndex(s=>s.id===h));
+show(start);
+const L=$("loader");
+setTimeout(()=>{L.classList.add("out");setTimeout(()=>L.remove(),900)},reduce?0:1100);
+})();
+</script>
+
+</html>

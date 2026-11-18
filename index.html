@@ -27,6 +27,7 @@
   --serif:"Instrument Serif","Noto Serif TC",Georgia,serif;
   --body:"Inter Tight","Noto Sans TC",system-ui,sans-serif;
   --u:16px;
+  --fs:1;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -79,7 +80,7 @@ a{color:inherit}
 .bg-paper .nav,.bg-paper~.x{color:var(--ink)}
 
 /* ---------- type ---------- */
-.lab{font:800 calc(max(12px,var(--u)*1.15))/1.2 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.lab{font:800 calc(var(--u)*1.15*var(--fs))/1.2 var(--display);text-transform:uppercase;letter-spacing:.03em}
 .lab .br{opacity:.6}
 .mint{color:var(--mint)}
 .bg-paper .mint{color:#0f8f74}
@@ -89,9 +90,9 @@ a{color:inherit}
 .it{font-family:var(--serif);font-weight:300;font-style:italic;letter-spacing:-.01em;text-transform:none}
 .it.cj{display:inline-block;line-height:1;transform:skewX(-11deg);font-weight:300;margin-right:.12em}
 .h2{font:900 calc(var(--u)*5.4)/1.12 var(--display);letter-spacing:-.03em;margin:0;text-wrap:balance}
-.h3{font:900 calc(max(18px,var(--u)*2.3))/1.1 var(--display);letter-spacing:-.01em;margin:0}
-.p{font:500 calc(max(15px,var(--u)*1.75))/1.6 var(--body);margin:0;max-width:40em}
-.sm{font:500 calc(max(13px,var(--u)*1.35))/1.55 var(--body);margin:0}
+.h3{font:900 calc(var(--u)*2.3*var(--fs))/1.1 var(--display);letter-spacing:-.01em;margin:0}
+.p{font:500 calc(var(--u)*1.75*var(--fs))/1.6 var(--body);margin:0;max-width:40em}
+.sm{font:500 calc(var(--u)*1.35*var(--fs))/1.55 var(--body);margin:0}
 .ind1{padding-left:12%}.ind2{padding-left:24%}.ind3{padding-left:36%}
 .right{text-align:right}
 
@@ -101,34 +102,34 @@ a{color:inherit}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.6)}
 .g2>*,.g3>*,.g4>*{min-width:0}
 .cell{border-top:2px solid currentColor;padding-top:calc(var(--u)*1.4);display:flex;flex-direction:column;gap:calc(var(--u)*1)}
-.idx{font:800 calc(max(12px,var(--u)*1.2))/1 var(--display);color:var(--mint)}
+.idx{font:800 calc(var(--u)*1.2*var(--fs))/1 var(--display);color:var(--mint)}
 .bg-paper .idx{color:var(--magenta)}
 .bg-mag .idx{color:var(--white);opacity:.75}
 .box{background:var(--ink);color:var(--white);padding:calc(var(--u)*2);display:flex;flex-direction:column;gap:calc(var(--u)*1)}
 .box.w{background:var(--white);color:var(--ink)}
 .box.m{background:var(--magenta);color:var(--white)}
-.chip{display:inline-block;border:1.5px solid currentColor;padding:.25em .7em;font:800 calc(max(12px,var(--u)*1.15))/1.2 var(--display)}
+.chip{display:inline-block;border:1.5px solid currentColor;padding:.25em .7em;font:800 calc(var(--u)*1.15*var(--fs))/1.2 var(--display)}
 ul.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:calc(var(--u)*.7)}
-ul.list li{font:500 calc(max(14px,var(--u)*1.6))/1.45 var(--body);padding-left:1.3em;position:relative}
+ul.list li{font:500 calc(var(--u)*1.6*var(--fs))/1.45 var(--body);padding-left:1.3em;position:relative}
 ul.list li::before{content:"—";position:absolute;left:0;opacity:.6}
 
 /* ---------- specific slides ---------- */
 .cover{grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2)}
-.cover .hl{font-size:calc(var(--u)*7.4);align-self:center}
-.meta{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:calc(var(--u)*2);font:800 calc(max(12px,var(--u)*1.25))/1.45 var(--display)}
+.cover .hl{font-size:calc(var(--u)*6.7);align-self:center}
+.meta{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:calc(var(--u)*2);font:800 calc(var(--u)*1.25*var(--fs))/1.45 var(--display)}
 .meta div span{display:block;opacity:.65;font-weight:700}
 
 .agenda{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*4);align-items:stretch}
 .ag{display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--u)*2);border-top:3px solid var(--white);padding-top:calc(var(--u)*1.6)}
 .ag .time{font:900 calc(var(--u)*6.4)/.9 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
 .ag ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:calc(var(--u)*.55)}
-.ag li{display:grid;grid-template-columns:4.2em 1fr auto;align-items:center;gap:1em;font:700 calc(max(13px,var(--u)*1.45))/1.3 var(--body)}
+.ag li{display:grid;grid-template-columns:4.2em 1fr auto;align-items:center;gap:1em;font:700 calc(var(--u)*1.45*var(--fs))/1.3 var(--body)}
 .ag li i{font-style:normal;color:var(--mint);font:800 .85em var(--display)}
 .ag li .bar{height:.55em;background:#f2b49e;width:var(--w);justify-self:end;min-width:12px;animation:bar 2.6s ease-in-out infinite alternate}
 @keyframes bar{to{width:calc(var(--w)*.55)}}
 
 .part{grid-template-rows:1fr auto;align-items:end}
-.part .num{font:900 calc(var(--u)*21)/.8 var(--display);letter-spacing:-.06em;color:var(--mint)}
+.part .num{font:900 calc(var(--u)*19)/.8 var(--display);letter-spacing:-.06em;color:var(--mint)}
 
 .split{grid-template-columns:1.05fr 1fr;gap:calc(var(--u)*4);align-items:stretch}
 .split>*{min-width:0}
@@ -137,35 +138,35 @@ ul.list li::before{content:"—";position:absolute;left:0;opacity:.6}
 .stage3 .stg{display:flex;flex-direction:column;gap:calc(var(--u)*1.2);border-top:3px solid currentColor;padding-top:calc(var(--u)*1.4)}
 .stg .big{font:900 calc(var(--u)*4.4)/1.1 var(--display)}
 .stg dl{margin:0;display:grid;gap:calc(var(--u)*1)}
-.stg dt{font:800 calc(max(12px,var(--u)*1.1))/1 var(--display);opacity:.6;text-transform:uppercase}
-.stg dd{margin:0;font:500 calc(max(14px,var(--u)*1.55))/1.45 var(--body)}
+.stg dt{font:800 calc(var(--u)*1.1*var(--fs))/1 var(--display);opacity:.6;text-transform:uppercase}
+.stg dd{margin:0;font:500 calc(var(--u)*1.55*var(--fs))/1.45 var(--body)}
 
 .story{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:calc(var(--u)*1.6)}
 .story .q{display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--u)*1);border:2px solid var(--ink);padding:calc(var(--u)*1.8)}
-.story .q .ex{font:500 calc(max(13px,var(--u)*1.45))/1.5 var(--body)}
+.story .q .ex{font:500 calc(var(--u)*1.45*var(--fs))/1.5 var(--body)}
 .story .q .ex b{color:var(--magenta)}
 
 .seg{display:flex;gap:6px}
-.seg button{border:1.5px solid currentColor;padding:.55em 1.1em;font:800 calc(max(13px,var(--u)*1.35))/1 var(--display)}
+.seg button{border:1.5px solid currentColor;padding:.55em 1.1em;font:800 calc(var(--u)*1.35*var(--fs))/1 var(--display)}
 .seg button[aria-pressed="true"]{background:var(--white);color:var(--ink)}
 .bg-paper .seg button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
 .steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-direction:column;gap:calc(var(--u)*.9)}
-.steps li{counter-increment:s;display:grid;grid-template-columns:2.6em 1fr;gap:.6em;align-items:baseline;font:600 calc(max(14px,var(--u)*1.7))/1.45 var(--body)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.6em 1fr;gap:.6em;align-items:baseline;font:600 calc(var(--u)*1.7*var(--fs))/1.45 var(--body)}
 .steps li::before{content:"[" counter(s,decimal-leading-zero) "]";font:800 .8em var(--display);color:var(--mint)}
 .bg-paper .steps li::before{color:var(--magenta)}
 
 .ladder{display:flex;flex-direction:column-reverse;gap:6px}
 .rung{display:grid;grid-template-columns:3em 1fr;align-items:center;gap:1em;padding:calc(var(--u)*1) calc(var(--u)*1.4);border:1.5px solid rgba(255,255,255,.55);transition:background .3s,color .3s,transform .3s;text-align:left;width:100%}
-.rung b{font:900 calc(max(15px,var(--u)*2))/1 var(--display)}
-.rung span{font:600 calc(max(13px,var(--u)*1.45))/1.4 var(--body)}
+.rung b{font:900 calc(var(--u)*2*var(--fs))/1 var(--display)}
+.rung span{font:600 calc(var(--u)*1.45*var(--fs))/1.4 var(--body)}
 .rung span em{font-style:normal;display:block;font-weight:900;font-size:1.15em}
 .rung.on{background:var(--white);color:var(--magenta);border-color:var(--white)}
 .rung.past{opacity:.45}
 
 .day{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
 .day button{background:var(--ink2);padding:calc(var(--u)*1.2) calc(var(--u)*.8);text-align:left;display:flex;flex-direction:column;gap:.4em;min-height:calc(var(--u)*13);border-top:3px solid var(--grey)}
-.day button b{font:900 calc(max(13px,var(--u)*1.6))/1 var(--display);font-variant-numeric:tabular-nums}
-.day button span{font:600 calc(max(12px,var(--u)*1.25))/1.35 var(--body)}
+.day button b{font:900 calc(var(--u)*1.6*var(--fs))/1 var(--display);font-variant-numeric:tabular-nums}
+.day button span{font:600 calc(var(--u)*1.25*var(--fs))/1.35 var(--body)}
 .day button.hot{border-top-color:var(--mint)}
 .day button.warn{border-top-color:var(--magenta)}
 .day button[aria-pressed="true"]{background:var(--white);color:var(--ink)}
@@ -174,18 +175,18 @@ ul.list li::before{content:"—";position:absolute;left:0;opacity:.6}
 
 .cats{grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.6)}
 .cat{display:flex;flex-direction:column;gap:calc(var(--u)*1.2);border-top:4px solid var(--ink);padding-top:calc(var(--u)*1.2)}
-.cat .h3 small{display:block;font:700 calc(max(12px,var(--u)*1.1))/1.2 var(--display);color:var(--magenta);margin-bottom:.4em;text-transform:uppercase}
-.cat ul.list li{font-size:calc(max(14px,var(--u)*1.55))}
+.cat .h3 small{display:block;font:700 calc(var(--u)*1.1*var(--fs))/1.2 var(--display);color:var(--magenta);margin-bottom:.4em;text-transform:uppercase}
+.cat ul.list li{font-size:calc(var(--u)*1.55*var(--fs))}
 
 .timebar{display:flex;height:calc(var(--u)*14);gap:4px}
 .timebar>div{display:flex;flex-direction:column;justify-content:space-between;padding:calc(var(--u)*1.2);background:rgba(0,0,0,.28);min-width:0}
 .timebar>div:nth-child(2){background:var(--white);color:var(--magenta)}
 .timebar b{font:900 calc(var(--u)*4.2)/.9 var(--display)}
 .timebar b small{font-size:.38em;margin-left:.15em}
-.timebar span{font:800 calc(max(13px,var(--u)*1.4))/1.2 var(--body)}
+.timebar span{font:800 calc(var(--u)*1.4*var(--fs))/1.2 var(--body)}
 
 .case{grid-template-columns:1fr 1.15fr;gap:calc(var(--u)*4)}
-.opt{width:100%;text-align:left;border:1.5px solid rgba(255,255,255,.6);padding:calc(var(--u)*1.3) calc(var(--u)*1.6);display:grid;grid-template-columns:2.2em 1fr;gap:.6em;font:600 calc(max(14px,var(--u)*1.6))/1.45 var(--body);transition:background .25s}
+.opt{width:100%;text-align:left;border:1.5px solid rgba(255,255,255,.6);padding:calc(var(--u)*1.3) calc(var(--u)*1.6);display:grid;grid-template-columns:2.2em 1fr;gap:.6em;font:600 calc(var(--u)*1.6*var(--fs))/1.45 var(--body);transition:background .25s}
 .opt b{font:900 1.1em var(--display);color:var(--mint)}
 .opt:hover{background:rgba(255,255,255,.08)}
 .opt.good{background:var(--mint);color:var(--ink);border-color:var(--mint)}
@@ -200,14 +201,14 @@ ul.list li::before{content:"—";position:absolute;left:0;opacity:.6}
 
 .timer{font:900 calc(var(--u)*15)/.85 var(--display);letter-spacing:-.05em;font-variant-numeric:tabular-nums}
 .tbtns{display:flex;gap:8px;flex-wrap:wrap}
-.tbtns button{border:1.5px solid currentColor;padding:.55em 1.1em;font:800 calc(max(13px,var(--u)*1.3))/1 var(--display)}
+.tbtns button{border:1.5px solid currentColor;padding:.55em 1.1em;font:800 calc(var(--u)*1.3*var(--fs))/1 var(--display)}
 .tbtns button:hover{background:var(--white);color:var(--magenta)}
 
 .bignum{font:900 calc(var(--u)*17)/.8 var(--display);letter-spacing:-.06em}
 .bignum small{font-size:.35em;letter-spacing:-.02em}
 
 .check{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.check button{border:1.5px solid rgba(255,255,255,.6);padding:calc(var(--u)*1) calc(var(--u)*1.3);text-align:left;font:600 calc(max(13px,var(--u)*1.45))/1.35 var(--body);display:flex;gap:.6em;align-items:center}
+.check button{border:1.5px solid rgba(255,255,255,.6);padding:calc(var(--u)*1) calc(var(--u)*1.3);text-align:left;font:600 calc(var(--u)*1.45*var(--fs))/1.35 var(--body);display:flex;gap:.6em;align-items:center}
 .check button::before{content:"";width:.9em;height:.9em;border:1.5px solid currentColor;flex:none}
 .check button[aria-pressed="true"]{background:var(--white);color:var(--ink)}
 .check button[aria-pressed="true"]::before{background:var(--magenta);border-color:var(--magenta)}
@@ -219,41 +220,68 @@ ul.list li::before{content:"—";position:absolute;left:0;opacity:.6}
 
 .prin .cell{justify-content:space-between;border-top-width:3px}
 .prin .h2{font-size:calc(var(--u)*6.2)!important}
-.prin .p{font-size:calc(max(15px,var(--u)*2))}
-.box ul.list li{font-size:calc(var(--u)*1.55)}
-.cell .sm{font-size:calc(max(13px,var(--u)*1.5))}
-.romtxt .h2{font-size:calc(var(--u)*4.8)}
-.romtxt .steps li{font-size:calc(var(--u)*1.6)}
+.prin .p{font-size:calc(var(--u)*2*var(--fs))}
+.box ul.list li{font-size:calc(var(--u)*1.55*var(--fs))}
+.cell .sm{font-size:calc(var(--u)*1.5*var(--fs))}
+.romtxt .h2{font-size:calc(var(--u)*4.3)}
+.romtxt .steps li{font-size:calc(var(--u)*1.6*var(--fs))}
 /* video backdrops: grayscale footage under a dot screen, like the reference */
 .vbg{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--ink)}
-.vbg video,.vin video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2) brightness(.7)}
+.vbg video,.vin video{width:100%;height:100%;object-fit:cover;display:block}
+.vbg video{filter:grayscale(1) contrast(1.2) brightness(.7)}
+.vin video{filter:saturate(1.05) contrast(1.05)}
+.vin::after{background:radial-gradient(circle,transparent 0 1.3px,rgba(11,10,11,.18) 1.8px) 0 0/5px 5px!important}
 .vbg::after,.vin::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(circle,transparent 0 1.15px,rgba(11,10,11,.62) 1.75px) 0 0/5px 5px}
 .vbg::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,10,11,.82) 0,rgba(11,10,11,.35) 55%,rgba(11,10,11,.1) 100%)}
 .vin{position:relative;overflow:hidden;background:var(--ink)}
 .vin.float{position:absolute;z-index:1}
 .vin .tag{position:absolute;left:10px;bottom:10px;z-index:2;font:800 11px/1.2 var(--display);color:var(--white);text-transform:uppercase}
+/* zoomable cards */
+.zoomable{cursor:zoom-in;transition:outline-color .2s;outline:2px solid transparent;outline-offset:4px}
+.zoomable:hover{outline-color:var(--mint)}
+.zoom{position:absolute;inset:0;z-index:45;display:none;align-items:center;justify-content:center;background:rgba(11,10,11,.86);backdrop-filter:blur(6px);padding:70px 90px}
+.zoom.on{display:flex}
+.zoom .zin{--fs:1.9;width:100%;max-width:1320px;max-height:100%;overflow:hidden;background:var(--paper);color:var(--ink);padding:44px 52px;display:flex;flex-direction:column;gap:18px;animation:zpop .35s cubic-bezier(.2,.9,.2,1)}
+.zoom .zin.dark{background:var(--ink2);color:var(--white)}
+.zoom .zin.mag{background:var(--magenta);color:var(--white)}
+.zoom .zin>*{border:0!important;background:none!important;padding:0!important;color:inherit!important;outline:0!important;cursor:auto}
+.zoom .zin .h3{font-size:calc(var(--u)*2.6*var(--fs))}
+.zoom .zin .big{font-size:calc(var(--u)*7)}
+.zoom .zin .letter{font-size:calc(var(--u)*12)}
+.zoom .zx{position:absolute;right:28px;top:22px;font:800 14px/1 var(--display);border:1.5px solid currentColor;padding:9px 14px;color:var(--white)}
+.zhint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:31;font:800 11.5px/1 var(--display);opacity:.55;pointer-events:none}
+@keyframes zpop{from{transform:scale(.92);opacity:0}to{transform:none;opacity:1}}
+@keyframes rise{from{transform:translateY(28px);opacity:0}to{transform:none;opacity:1}}
+@keyframes lineup{from{transform:translateY(55%);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 -20% 0)}}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+.slide.enter .hl .l{animation:lineup .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*90ms + 120ms)}
+.slide.enter .anim{animation:rise .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*70ms + 200ms)}
+.slide.enter .vbg video{animation:kb 9s ease-out both}
+.slide.enter .vin video{animation:kb 7s ease-out both}
+.slide.enter .vin.float,.slide.enter .vin{animation:rise .9s cubic-bezier(.2,.8,.2,1) both .35s}
+@media (prefers-reduced-motion:reduce){.slide.enter *{animation:none!important}}
 /* figures */
 .rom{grid-template-columns:1.25fr 1fr;gap:calc(var(--u)*3.5);align-items:stretch}
 .figwrap{position:relative;display:flex;flex-direction:column;justify-content:center;min-width:0;background:
   radial-gradient(circle at 1px 1px,rgba(255,255,255,.16) 1px,transparent 1.4px) 0 0/9px 9px,var(--ink2)}
 .figwrap svg{width:100%;height:100%;max-height:100%;display:block}
-.figwrap .cnt{position:absolute;left:calc(var(--u)*1.6);bottom:calc(var(--u)*1.4);font:800 calc(max(12px,var(--u)*1.3))/1 var(--display)}
+.figwrap .cnt{position:absolute;left:calc(var(--u)*1.6);bottom:calc(var(--u)*1.4);font:800 calc(var(--u)*1.3*var(--fs))/1 var(--display)}
 .figwrap .cnt b{color:var(--mint);font-size:1.6em;font-variant-numeric:tabular-nums}
 .figwrap .vw{position:absolute;left:calc(var(--u)*1.6);top:calc(var(--u)*1.4)}
-.figwrap .legend{position:absolute;right:calc(var(--u)*1.6);bottom:calc(var(--u)*1.4);font:700 calc(max(11px,var(--u)*1.1))/1 var(--display);display:flex;align-items:center;gap:.5em}
+.figwrap .legend{position:absolute;right:calc(var(--u)*1.6);bottom:calc(var(--u)*1.4);font:700 calc(var(--u)*1.1*var(--fs))/1 var(--display);display:flex;align-items:center;gap:.5em}
 .figwrap .legend::before{content:"";width:.9em;height:.9em;border-radius:50%;background:var(--mint)}
 .romtxt{display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--u)*1.1);min-width:0}
-.warn{border:2px solid var(--magenta);padding:calc(var(--u)*1.3) calc(var(--u)*1.6);font:600 calc(max(13px,var(--u)*1.45))/1.5 var(--body)}
+.warn{border:2px solid var(--magenta);padding:calc(var(--u)*1.3) calc(var(--u)*1.6);font:600 calc(var(--u)*1.45*var(--fs))/1.5 var(--body)}
 .warn b{color:var(--magenta);font-family:var(--display);font-weight:900;margin-right:.4em}
 
 .six{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:calc(var(--u)*1.2)}
 .six .fc{display:grid;grid-template-columns:1.15fr 1fr;gap:calc(var(--u)*1);background:var(--ink2);padding:calc(var(--u)*1.2);min-height:0}
 .six .fc svg{width:100%;height:100%;min-height:0}
 .six .fc .tx{display:flex;flex-direction:column;justify-content:space-between;gap:.5em;min-width:0}
-.six .fc .tx .h3{font-size:calc(max(16px,var(--u)*1.9))}
-.six .fc .tx .sm{font-size:calc(max(12px,var(--u)*1.22))}
-.six .fc .tx .rx{font:800 calc(max(12px,var(--u)*1.2))/1.3 var(--display);color:var(--mint)}
+.six .fc .tx .h3{font-size:calc(var(--u)*1.9*var(--fs))}
+.six .fc .tx .sm{font-size:calc(var(--u)*1.22*var(--fs))}
+.six .fc .tx .rx{font:800 calc(var(--u)*1.2*var(--fs))/1.3 var(--display);color:var(--mint)}
 
 .rpe{display:flex;flex-direction:column;gap:calc(var(--u)*1.2)}
 .rpe input{width:100%;accent-color:var(--mint)}
@@ -264,9 +292,9 @@ ul.list li::before{content:"—";position:absolute;left:0;opacity:.6}
 .rpe .scale i.r{background:var(--magenta)}
 .rpe .say{font:900 calc(var(--u)*4.4)/1 var(--display)}
 
-table.tb{width:100%;border-collapse:collapse;color:inherit;font:600 calc(max(13px,var(--u)*1.5))/1.4 var(--body)}
+table.tb{width:100%;border-collapse:collapse;color:inherit;font:600 calc(var(--u)*1.5*var(--fs))/1.4 var(--body)}
 table.tb th,table.tb td{text-align:left;padding:calc(var(--u)*.75) calc(var(--u)*1);border-bottom:1.5px solid currentColor;vertical-align:top}
-table.tb th{font:800 calc(max(12px,var(--u)*1.15))/1.2 var(--display);text-transform:uppercase;opacity:.75}
+table.tb th{font:800 calc(var(--u)*1.15*var(--fs))/1.2 var(--display);text-transform:uppercase;opacity:.75}
 table.tb td:first-child{font-weight:900}
 .tbwrap{overflow-x:auto}
 
@@ -274,7 +302,7 @@ table.tb td:first-child{font-weight:900}
 .stack{display:flex;height:calc(var(--u)*22);gap:4px}
 .stack>div{padding:calc(var(--u)*1.1);display:flex;flex-direction:column;justify-content:space-between;min-width:0}
 .stack b{font:900 calc(var(--u)*3.4)/.9 var(--display)}
-.stack span{font:700 calc(max(12px,var(--u)*1.3))/1.3 var(--body)}
+.stack span{font:700 calc(var(--u)*1.3*var(--fs))/1.3 var(--body)}
 .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:calc(var(--u)*1.2)}
 .flow .arr{font:900 calc(var(--u)*4)/1 var(--display);color:var(--magenta)}
 
@@ -326,12 +354,14 @@ table.tb td:first-child{font-weight:900}
   <div class="arrows"><button id="prev" aria-label="上一頁">←</button><button id="next" aria-label="下一頁">→</button></div>
 </footer>
 <div class="progress" id="progress"></div>
+<div class="zhint" id="zhint">點字卡可放大</div>
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="放大字卡"><button class="zx" id="zx">[ 關閉 ESC ]</button><div class="zin" id="zin"></div></div>
 
 <main class="deck" id="deck">
 
 <!-- 01 cover -->
 <section class="slide bg-mag" id="s-cover" data-title="封面">
-  <div class="vin float" style="right:calc(var(--u)*9);top:calc(var(--u)*7);width:calc(var(--u)*20);height:calc(var(--u)*35.5)"><video src="media/in-push.mp4" muted loop playsinline preload="auto"></video><span class="tag">[ 毛巾核心課 ] 鍾孟修示範</span></div>
+  <div class="vin float" style="right:calc(var(--u)*9);top:calc(var(--u)*7);width:calc(var(--u)*20);height:calc(var(--u)*35.5)"><video src="media/in-flower.mp4" muted loop playsinline preload="auto"></video></div>
   <div class="fill cover">
     <div class="lab scr">[ 長照積分課 ] 115 / 11 / 22 (日)</div>
     <h1 class="hl">
@@ -385,7 +415,7 @@ table.tb td:first-child{font-weight:900}
 
 <!-- 03 part 1 -->
 <section class="slide bg-black" id="s-p1" data-title="課程一：失智症日常活動">
-  <div class="vbg"><video src="media/bg-stretch.mp4" muted loop playsinline preload="auto"></video></div>
+  <div class="vbg"><video src="media/bg-puzzle.mp4" muted loop playsinline preload="auto"></video></div>
   <div class="fill part">
     <div class="num">01</div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
@@ -400,7 +430,7 @@ table.tb td:first-child{font-weight:900}
   <div class="fill split">
     <div class="col">
       <div class="lab">[ 為什麼 ] 活動不是加分題</div>
-      <h2 class="hl" style="font-size:calc(var(--u)*6)"><span class="l">沒事做</span><span class="l ind1">的一天，</span><span class="l"><span class="it cj">最</span>難熬</span></h2>
+      <h2 class="hl" style="font-size:calc(var(--u)*5)"><span class="l">沒事做</span><span class="l ind1">的一天，</span><span class="l"><span class="it cj">最</span>難熬</span></h2>
     </div>
     <div class="col">
       <div class="g2" style="gap:calc(var(--u)*1.6)">
@@ -409,7 +439,7 @@ table.tb td:first-child{font-weight:900}
       </div>
       <div class="box w">
         <span class="lab mag">[ 指引怎麼說 ]</span>
-        <p class="p" style="font-size:calc(var(--u)*1.6)">英國 NICE 失智照護指引（NG97, 2018）建議：提供<b>依個人喜好量身安排</b>的各種活動，來維持身心安適。活動是最基本、也最先做的非藥物照護。</p>
+        <p class="p" style="font-size:calc(var(--u)*1.6*var(--fs))">英國 NICE 失智照護指引（NG97, 2018）建議：提供<b>依個人喜好量身安排</b>的各種活動，來維持身心安適。活動是最基本、也最先做的非藥物照護。</p>
       </div>
       <p class="sm"><b>居服員每週來的那幾個小時，</b>可能是長輩一週裡最有機會「做點事」的時間。</p>
     </div>
@@ -593,6 +623,7 @@ table.tb td:first-child{font-weight:900}
       <div class="fb" id="caseFb"><p class="sm" style="opacity:.7">點右邊的選項，看看哪一個比較好。</p></div>
     </div>
     <div class="col" style="justify-content:center;gap:calc(var(--u)*1.2)">
+      <div class="vin" style="height:calc(var(--u)*11)"><video src="media/in-cook.mp4" muted loop playsinline preload="auto"></video><span class="tag">[ 以前每天下午都在備料 ]</span></div>
       <button class="opt" data-k="a"><b>A</b><span>跟她說清楚：「阿嬤，這裡就是妳家，妳已經沒開店了。」</span></button>
       <button class="opt" data-k="b"><b>B</b><span>「客人要來了喔？那我們先來撿菜、準備小菜。」拿出四季豆一起撿。</span></button>
       <button class="opt" data-k="c"><b>C</b><span>打開電視讓她坐著看，等家人下班回來。</span></button>
@@ -702,7 +733,7 @@ table.tb td:first-child{font-weight:900}
 
 <!-- 20 part 2 -->
 <section class="slide bg-black" id="s-p2" data-title="課程二：關節活動與肌力">
-  <div class="vbg"><video src="media/bg-core.mp4" muted loop playsinline preload="auto"></video></div>
+  <div class="vbg"><video src="media/bg-stretch.mp4" muted loop playsinline preload="auto"></video></div>
   <div class="fill part">
     <div class="num">02</div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
@@ -717,7 +748,7 @@ table.tb td:first-child{font-weight:900}
   <div class="fill split">
     <div class="col">
       <div class="lab">[ 不動的代價 ]</div>
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:calc(var(--u)*2)"><div class="bignum" style="font-size:calc(var(--u)*11);white-space:nowrap">1<span style="opacity:.6"> ~ </span>1.5<small>%</small></div><div class="vin" style="flex:none;width:calc(var(--u)*13);height:calc(var(--u)*23)"><video src="media/in-slide.mp4" muted loop playsinline preload="auto"></video></div></div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:calc(var(--u)*2)"><div class="bignum" style="font-size:calc(var(--u)*10);white-space:nowrap">1<span style="opacity:.6"> ~ </span>1.5<small>%</small></div><div class="vin" style="flex:none;width:calc(var(--u)*13);height:calc(var(--u)*23)"><video src="media/in-bed.mp4" muted loop playsinline preload="auto"></video></div></div>
       <p class="p"><b>完全臥床時，每天流失的肌力。</b>這是復健領域常被引用的估計值；臥床一兩週，起身就明顯變吃力。</p>
     </div>
     <div class="col">
@@ -902,7 +933,7 @@ table.tb td:first-child{font-weight:900}
       <h2 class="hl" style="font-size:calc(var(--u)*6.4)"><span class="l">不要說</span><span class="l ind1">「運動」，</span><span class="l"><span class="it cj">說</span>「幫我」</span></h2>
       <p class="p">「阿公，幫我把杯子拿過去。」站起來、走兩步、坐下，就是一組坐到站。</p>
     </div>
-    <div class="vin"><video src="media/in-sit.mp4" muted loop playsinline preload="auto"></video><span class="tag">[ 面對面示範 ]</span></div>
+    <div class="vin"><video src="media/in-care.mp4" muted loop playsinline preload="auto"></video><span class="tag">[ 一起動 ]</span></div>
     <div style="display:grid;grid-template-rows:repeat(4,1fr);gap:calc(var(--u)*1.2)">
       <div class="cell"><span class="idx">[ 01 ] 面對面示範</span><p class="p">坐在他正前方，像照鏡子一樣做，他跟著學。</p></div>
       <div class="cell"><span class="idx">[ 02 ] 一次一個指令</span><p class="p">「腳抬起來」做完，再說「放下」。不要一次講三件事。</p></div>
@@ -971,7 +1002,7 @@ table.tb td:first-child{font-weight:900}
 
 <!-- thanks -->
 <section class="slide bg-black" data-title="謝謝・問與答">
-  <div class="vbg"><video src="media/bg-reach.mp4" muted loop playsinline preload="auto"></video></div>
+  <div class="vbg"><video src="media/bg-walk.mp4" muted loop playsinline preload="auto"></video></div>
   <div class="fill part">
     <div class="h2" style="font-size:calc(var(--u)*13);align-self:center">問與答<br><span class="it cj mint">謝謝大家</span></div>
     <div class="meta">
@@ -980,6 +1011,7 @@ table.tb td:first-child{font-weight:900}
       <div><span>課程</span>喜樂園 長照積分課</div>
       <div><span>日期</span>115 / 11 / 22 (日)</div>
     </div>
+    <div class="lab" style="position:absolute;right:0;top:0;opacity:.6">影片素材：Pexels（免費授權）</div>
   </div>
 </section>
 
@@ -1149,6 +1181,8 @@ function show(i){
   document.querySelectorAll(".nav [data-go]").forEach(b=>b.classList.toggle("on",(b.dataset.go==="s-p1"&&i>=1&&i<p2)||(b.dataset.go==="s-p2"&&i>=p2)));
   try{history.replaceState(null,"","#"+s.id)}catch(e){}
   s.querySelectorAll(".scr").forEach(scramble);
+  fitText(s);
+  s.classList.remove("enter");void s.offsetWidth;if(!reduce){s.classList.add("enter");clearTimeout(s._et);s._et=setTimeout(()=>s.classList.remove("enter"),1700)}
   if(s.dataset.glyph)halftone(s);
   document.querySelectorAll('.slide video').forEach(v=>{if(s.contains(v)){try{v.currentTime=0}catch(e){}const p=v.play();p&&p.catch(()=>{})}else v.pause()});
   s.scrollTop=0;
@@ -1165,10 +1199,11 @@ document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(slides.findIn
 $("fs").onclick=()=>{try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}};
 addEventListener("keydown",e=>{
   if(e.target.tagName==="INPUT")return;
+  if(zoom.classList.contains("on")&&e.key!=="Escape"){if(["ArrowRight","ArrowLeft"," "].includes(e.key)){e.preventDefault();closeZoom()}return}
   if(["ArrowRight","PageDown"," "].includes(e.key)){e.preventDefault();go(cur+1)}
   else if(["ArrowLeft","PageUp"].includes(e.key)){e.preventDefault();go(cur-1)}
   else if(e.key==="Home")go(0);else if(e.key==="End")go(N-1);
-  else if(e.key==="Escape")closeIndex();else if(e.key==="m"||e.key==="M")openIndex();
+  else if(e.key==="Escape"){closeIndex();closeZoom()}else if(e.key==="m"||e.key==="M")openIndex();
 });
 let tx=null;addEventListener("touchstart",e=>{tx=e.touches[0].clientX},{passive:true});
 addEventListener("touchend",e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>60)go(cur+(dx<0?1:-1));tx=null},{passive:true});
@@ -1292,6 +1327,36 @@ function rpe(){const v=+$("rpe").value;$("rpeSay").textContent=v+"・"+RS[v];
   $("rpeP").textContent=v<=3?"太輕鬆了：可以多做幾下，或加一點重量。":v<=6?"剛剛好：還能說話、有點喘，這就是要的強度。":"太累了：減少次數或重量，休息一下。說不出話就停。"}
 $("rpe").oninput=rpe;rpe();
 
+/* ================= auto-fit text: grow until the slide is full ================= */
+const BOXES='.fill,.fill .col,.fill .box,.fill .cell,.fill .g2,.fill .g3,.fill .g4,.tbwrap,.romtxt,.verdict,.stg,.story .q,.cat,.dice .d,.six .fc,.fc .tx,.timebar>div,.stack>div,.day button,.ladder,.rung,.opt,.check button,.daydetail';
+function overflows(root){const f=root.querySelector('.fill');if(!f)return false;if(f.scrollHeight>f.clientHeight+1||f.scrollWidth>f.clientWidth+1)return true;for(const e of root.querySelectorAll(BOXES)){if(e.clientHeight&&(e.scrollHeight>e.clientHeight+1))return true;if(e.clientWidth&&e.scrollWidth>e.clientWidth+2)return true}return false}
+function fitText(s){
+  if(s.dataset.fs){s.style.setProperty('--fs',s.dataset.fs);return}
+  let lo=1,hi=1.75;s.style.setProperty('--fs',1);
+  if(overflows(s)){s.dataset.fs=1;return}
+  for(let k=0;k<7;k++){const m=(lo+hi)/2;s.style.setProperty('--fs',m);if(overflows(s))hi=m;else lo=m}
+  const v=Math.floor(lo*100)/100;s.style.setProperty('--fs',v);s.dataset.fs=v;
+}
+window.__deck={fitText,overflows};
+document.fonts&&document.fonts.ready.then(()=>{slides.forEach(x=>delete x.dataset.fs);fitText(slides[cur])});
+slides.forEach(s=>{
+  s.querySelectorAll('.hl .l').forEach((l,i)=>l.style.setProperty('--i',i));
+  const items=s.querySelectorAll('.fill>*:not(.hl), .g2>*, .g3>*, .g4>*, .cats>*, .story>*, .dice>*, .six>*, .timebar>*, .stack>*, .steps>li, .ladder>*, .day>*, .tbwrap tr, .col>*');
+  [...new Set(items)].forEach((e,i)=>{if(e.closest('.hl'))return;e.classList.add('anim');e.style.setProperty('--i',Math.min(i,14))});
+});
+const ZSEL='.cell,.box,.stg,.story .q,.cat,.dice .d,.warn,.tbwrap,.daydetail,.verdict,.stack>div,.timebar>div';
+document.querySelectorAll(ZSEL).forEach(e=>{if(e.closest('.zoom')||e.querySelector('button,input'))return;e.classList.add('zoomable');e.setAttribute('tabindex','0')});
+const zoom=$("zoom"),zin=$("zin");
+function openZoom(e){
+  const c=e.cloneNode(true);c.querySelectorAll('[id]').forEach(x=>x.removeAttribute('id'));c.removeAttribute('id');c.classList.remove('zoomable','anim');c.querySelectorAll('.anim').forEach(x=>x.classList.remove('anim'));
+  const sl=e.closest('.slide');
+  const tone=e.classList.contains('m')?'mag':e.classList.contains('w')?'':e.classList.contains('box')?'dark':sl.classList.contains('bg-paper')?'':sl.classList.contains('bg-mag')?'mag':'dark';
+  zin.className='zin '+tone;zin.style.animation="none";if(!reduce){void zin.offsetWidth;zin.style.animation=""}setTimeout(()=>zin.style.animation="none",450);zin.innerHTML='';zin.appendChild(c);zoom.classList.add('on');
+  let fs=2.3;zin.style.setProperty('--fs',fs);while(fs>1&&zin.scrollHeight>zin.clientHeight+1){fs-=.1;zin.style.setProperty('--fs',fs)}
+}
+function closeZoom(){zoom.classList.remove('on');zin.innerHTML=''}
+document.addEventListener('click',ev=>{const z=ev.target.closest('.zoomable');if(z&&!zoom.contains(z)){openZoom(z);return}if(zoom.classList.contains('on')&&(ev.target===zoom||ev.target.id==='zx'))closeZoom()});
+document.addEventListener('keydown',ev=>{if(ev.key==='Enter'&&document.activeElement&&document.activeElement.classList.contains('zoomable'))openZoom(document.activeElement)});
 /* ================= stage scale ================= */
 function fit(){const k=Math.min(innerWidth/1600,innerHeight/900);document.documentElement.style.setProperty("--k",k)}
 addEventListener("resize",fit);fit();

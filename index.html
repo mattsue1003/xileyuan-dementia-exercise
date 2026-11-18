@@ -261,6 +261,13 @@ ul.list li::before{content:"—";position:absolute;left:0;opacity:.6}
 .slide.enter .vin video{animation:kb 7s ease-out both}
 .slide.enter .vin.float,.slide.enter .vin{animation:rise .9s cubic-bezier(.2,.8,.2,1) both .35s}
 @media (prefers-reduced-motion:reduce){.slide.enter *{animation:none!important}}
+/* injected backdrops */
+.vbg.dim::before{background:linear-gradient(90deg,rgba(11,10,11,.72) 0,rgba(11,10,11,.6) 55%,rgba(11,10,11,.5) 100%)}
+.vbg.dim video{filter:grayscale(1) contrast(1.15) brightness(.85)}
+.vmag{position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:multiply;opacity:.55;overflow:hidden}
+.vmag video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.25) brightness(1.15)}
+.vmag::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent 0 1.2px,rgba(80,0,40,.35) 1.8px) 0 0/5px 5px}
+.slide.enter .vmag video{animation:kb 9s ease-out both}
 /* figures */
 .rom{grid-template-columns:1.25fr 1fr;gap:calc(var(--u)*3.5);align-items:stretch}
 .figwrap{position:relative;display:flex;flex-direction:column;justify-content:center;min-width:0;background:
@@ -361,7 +368,7 @@ table.tb td:first-child{font-weight:900}
 
 <!-- 01 cover -->
 <section class="slide bg-mag" id="s-cover" data-title="封面">
-  <div class="vin float" style="right:calc(var(--u)*9);top:calc(var(--u)*7);width:calc(var(--u)*20);height:calc(var(--u)*35.5)"><video src="media/in-flower.mp4" muted loop playsinline preload="auto"></video></div>
+  <div class="vin float" style="right:calc(var(--u)*9);top:calc(var(--u)*7);width:calc(var(--u)*20);height:calc(var(--u)*35.5)"><video data-src="media/in-flower.mp4" muted loop playsinline preload="auto"></video></div>
   <div class="fill cover">
     <div class="lab scr">[ 長照積分課 ] 115 / 11 / 22 (日)</div>
     <h1 class="hl">
@@ -380,7 +387,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 02 agenda -->
-<section class="slide bg-black" id="s-agenda" data-title="今天的兩堂課">
+<section class="slide bg-black" id="s-agenda" data-title="今天的兩堂課" data-bg="agenda">
   <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2.4)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
       <h2 class="h2">兩堂課，<span class="it cj">一條線</span></h2>
@@ -415,7 +422,7 @@ table.tb td:first-child{font-weight:900}
 
 <!-- 03 part 1 -->
 <section class="slide bg-black" id="s-p1" data-title="課程一：失智症日常活動">
-  <div class="vbg"><video src="media/bg-puzzle.mp4" muted loop playsinline preload="auto"></video></div>
+  <div class="vbg"><video data-src="media/bg-puzzle.mp4" muted loop playsinline preload="auto"></video></div>
   <div class="fill part">
     <div class="num">01</div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
@@ -426,7 +433,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 04 why -->
-<section class="slide bg-mag" data-title="沒事做的一天最難熬">
+<section class="slide bg-mag" data-title="沒事做的一天最難熬" data-bg="think">
   <div class="fill split">
     <div class="col">
       <div class="lab">[ 為什麼 ] 活動不是加分題</div>
@@ -464,7 +471,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 06 stages -->
-<section class="slide bg-black" data-title="先看他還會什麼">
+<section class="slide bg-black" data-title="先看他還會什麼" data-bg="stages">
   <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2.6)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
       <h2 class="h2">先看他<span class="it cj">還會</span>什麼</h2>
@@ -488,7 +495,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 07 principles -->
-<section class="slide bg-mag" data-title="安排活動的四個原則">
+<section class="slide bg-mag" data-title="安排活動的四個原則" data-bg="princ">
   <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2)">
     <div class="lab">[ 四個原則 ] 每次安排前，在心裡過一遍</div>
     <div class="g4 prin" style="align-items:stretch">
@@ -521,7 +528,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 09 activity analysis -->
-<section class="slide bg-black" data-title="活動分析與難度調整">
+<section class="slide bg-black" data-title="活動分析與難度調整" data-bg="fold">
   <div class="fill split">
     <div class="col">
       <div class="lab">[ 活動分析 ] 職能治療師最常用的工具</div>
@@ -544,7 +551,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 10 prompting -->
-<section class="slide bg-mag" data-title="提示階層">
+<section class="slide bg-mag" data-title="提示階層" data-bg="guide">
   <div class="fill split">
     <div class="col">
       <div class="lab">[ 提示階層 ] 協助從最少開始</div>
@@ -564,7 +571,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 11 day rhythm -->
-<section class="slide bg-black" data-title="一天的節奏">
+<section class="slide bg-black" data-title="一天的節奏" data-bg="sun">
   <div class="fill" style="grid-template-rows:auto auto 1fr;gap:calc(var(--u)*2.2)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
       <h2 class="h2">把你來的時段，<span class="it cj">放進</span>他的一天</h2>
@@ -592,7 +599,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 13 30-min template -->
-<section class="slide bg-mag" data-title="30 分鐘一對一範本">
+<section class="slide bg-mag" data-title="30 分鐘一對一範本" data-bg="cups">
   <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.4)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
       <h2 class="h2">一次 30 分鐘，<br><span class="it cj">四段</span>就夠</h2>
@@ -623,7 +630,7 @@ table.tb td:first-child{font-weight:900}
       <div class="fb" id="caseFb"><p class="sm" style="opacity:.7">點右邊的選項，看看哪一個比較好。</p></div>
     </div>
     <div class="col" style="justify-content:center;gap:calc(var(--u)*1.2)">
-      <div class="vin" style="height:calc(var(--u)*11)"><video src="media/in-cook.mp4" muted loop playsinline preload="auto"></video><span class="tag">[ 以前每天下午都在備料 ]</span></div>
+      <div class="vin" style="height:calc(var(--u)*11)"><video data-src="media/in-cook.mp4" muted loop playsinline preload="auto"></video><span class="tag">[ 以前每天下午都在備料 ]</span></div>
       <button class="opt" data-k="a"><b>A</b><span>跟她說清楚：「阿嬤，這裡就是妳家，妳已經沒開店了。」</span></button>
       <button class="opt" data-k="b"><b>B</b><span>「客人要來了喔？那我們先來撿菜、準備小菜。」拿出四季豆一起撿。</span></button>
       <button class="opt" data-k="c"><b>C</b><span>打開電視讓她坐著看，等家人下班回來。</span></button>
@@ -650,7 +657,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 16 safety -->
-<section class="slide bg-mag" data-title="什麼時候該停">
+<section class="slide bg-mag" data-title="什麼時候該停" data-bg="hands">
   <div class="fill split">
     <div class="col">
       <div class="lab">[ 安全 ] 看臉色比看進度重要</div>
@@ -667,7 +674,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 17 record -->
-<section class="slide bg-black" data-title="一行紀錄">
+<section class="slide bg-black" data-title="一行紀錄" data-bg="write">
   <div class="fill" style="grid-template-rows:auto 1fr auto;gap:calc(var(--u)*2.2)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
       <h2 class="h2">寫一行，<span class="it cj">下一個人</span>就不用重來</h2>
@@ -690,7 +697,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 18 group practice -->
-<section class="slide bg-mag" data-title="分組練習">
+<section class="slide bg-mag" data-title="分組練習" data-bg="tea">
   <div class="fill split">
     <div class="col">
       <div class="lab">[ 分組練習 ] 4–5 人一組</div>
@@ -733,7 +740,7 @@ table.tb td:first-child{font-weight:900}
 
 <!-- 20 part 2 -->
 <section class="slide bg-black" id="s-p2" data-title="課程二：關節活動與肌力">
-  <div class="vbg"><video src="media/bg-stretch.mp4" muted loop playsinline preload="auto"></video></div>
+  <div class="vbg"><video data-src="media/bg-stretch.mp4" muted loop playsinline preload="auto"></video></div>
   <div class="fill part">
     <div class="num">02</div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
@@ -748,7 +755,7 @@ table.tb td:first-child{font-weight:900}
   <div class="fill split">
     <div class="col">
       <div class="lab">[ 不動的代價 ]</div>
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:calc(var(--u)*2)"><div class="bignum" style="font-size:calc(var(--u)*10);white-space:nowrap">1<span style="opacity:.6"> ~ </span>1.5<small>%</small></div><div class="vin" style="flex:none;width:calc(var(--u)*13);height:calc(var(--u)*23)"><video src="media/in-bed.mp4" muted loop playsinline preload="auto"></video></div></div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:calc(var(--u)*2)"><div class="bignum" style="font-size:calc(var(--u)*10);white-space:nowrap">1<span style="opacity:.6"> ~ </span>1.5<small>%</small></div><div class="vin" style="flex:none;width:calc(var(--u)*13);height:calc(var(--u)*23)"><video data-src="media/in-bed.mp4" muted loop playsinline preload="auto"></video></div></div>
       <p class="p"><b>完全臥床時，每天流失的肌力。</b>這是復健領域常被引用的估計值；臥床一兩週，起身就明顯變吃力。</p>
     </div>
     <div class="col">
@@ -781,7 +788,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 23 three ROM -->
-<section class="slide bg-black" data-title="三種關節活動">
+<section class="slide bg-black" data-title="三種關節活動" data-bg="therapy">
   <div class="fill" style="grid-template-rows:auto 1fr;gap:calc(var(--u)*2.6)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
       <h2 class="h2">誰出力？<span class="it cj">三種</span>關節活動</h2>
@@ -796,7 +803,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- 24 safety check -->
-<section class="slide bg-mag" data-title="開始前 30 秒檢查">
+<section class="slide bg-mag" data-title="開始前 30 秒檢查" data-bg="bp">
   <div class="fill split">
     <div class="col">
       <div class="lab">[ 開始前 30 秒 ] 點出今天的狀況</div>
@@ -854,7 +861,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- strength principles -->
-<section class="slide bg-black" data-title="肌力訓練怎麼算夠">
+<section class="slide bg-black" data-title="肌力訓練怎麼算夠" data-bg="dumbbell">
   <div class="fill split">
     <div class="col">
       <div class="lab mint">[ 肌力訓練原則 ] WHO 2020 身體活動指引</div>
@@ -933,7 +940,7 @@ table.tb td:first-child{font-weight:900}
       <h2 class="hl" style="font-size:calc(var(--u)*6.4)"><span class="l">不要說</span><span class="l ind1">「運動」，</span><span class="l"><span class="it cj">說</span>「幫我」</span></h2>
       <p class="p">「阿公，幫我把杯子拿過去。」站起來、走兩步、坐下，就是一組坐到站。</p>
     </div>
-    <div class="vin"><video src="media/in-care.mp4" muted loop playsinline preload="auto"></video><span class="tag">[ 一起動 ]</span></div>
+    <div class="vin"><video data-src="media/in-care.mp4" muted loop playsinline preload="auto"></video><span class="tag">[ 一起動 ]</span></div>
     <div style="display:grid;grid-template-rows:repeat(4,1fr);gap:calc(var(--u)*1.2)">
       <div class="cell"><span class="idx">[ 01 ] 面對面示範</span><p class="p">坐在他正前方，像照鏡子一樣做，他跟著學。</p></div>
       <div class="cell"><span class="idx">[ 02 ] 一次一個指令</span><p class="p">「腳抬起來」做完，再說「放下」。不要一次講三件事。</p></div>
@@ -944,7 +951,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- combined menu -->
-<section class="slide bg-black" data-title="合起來：30 分鐘居家菜單">
+<section class="slide bg-black" data-title="合起來：30 分鐘居家菜單" data-bg="chop">
   <div class="fill menu2" style="display:flex">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2em;flex-wrap:wrap">
       <h2 class="h2">合起來：<span class="it cj">動腦＋動手</span>30 分鐘</h2>
@@ -989,7 +996,7 @@ table.tb td:first-child{font-weight:900}
 </section>
 
 <!-- final summary -->
-<section class="slide bg-mag" data-title="總結">
+<section class="slide bg-mag" data-title="總結" data-bg="smile">
   <div class="fill split">
     <h2 class="hl" style="font-size:calc(var(--u)*8.8);align-self:center"><span class="l">有事做，</span><span class="l ind1">動得了，</span><span class="l"><span class="it cj">日子才</span></span><span class="l ind2">好過</span></h2>
     <div class="col" style="justify-content:center;gap:calc(var(--u)*2)">
@@ -1002,7 +1009,7 @@ table.tb td:first-child{font-weight:900}
 
 <!-- thanks -->
 <section class="slide bg-black" data-title="謝謝・問與答">
-  <div class="vbg"><video src="media/bg-walk.mp4" muted loop playsinline preload="auto"></video></div>
+  <div class="vbg"><video data-src="media/bg-walk.mp4" muted loop playsinline preload="auto"></video></div>
   <div class="fill part">
     <div class="h2" style="font-size:calc(var(--u)*13);align-self:center">問與答<br><span class="it cj mint">謝謝大家</span></div>
     <div class="meta">
@@ -1149,6 +1156,12 @@ const SIX=[
 ];
 document.getElementById("six").innerHTML=SIX.map(s=>`<div class="fc"><svg class="fig" data-anim="${s.k}" viewBox="40 22 155 142" role="img" aria-label="${s.t}動畫"></svg><div class="tx"><div><div class="lab mint">[ ${s.n} ]</div><div class="h3">${s.t}</div></div><p class="sm">${s.d}</p><div><div class="rx">${s.rx}</div><p class="sm" style="opacity:.7">${s.x}</p></div></div></div>`).join("");
 
+/* ================= backdrops from data-bg ================= */
+document.querySelectorAll(".slide[data-bg]").forEach(s=>{
+  const d=document.createElement("div");const mag=s.classList.contains("bg-mag");
+  d.className=mag?"vmag":"vbg dim";d.innerHTML=`<video data-src="media/bg-${s.dataset.bg}.mp4" muted loop playsinline preload="auto"></video>`;
+  s.prepend(d);
+});
 /* ================= deck ================= */
 const slides=[...document.querySelectorAll(".slide")];
 slides.forEach((s,i)=>{if(!s.id)s.id="s"+(i+1)});
@@ -1184,7 +1197,8 @@ function show(i){
   fitText(s);
   s.classList.remove("enter");void s.offsetWidth;if(!reduce){s.classList.add("enter");clearTimeout(s._et);s._et=setTimeout(()=>s.classList.remove("enter"),1700)}
   if(s.dataset.glyph)halftone(s);
-  document.querySelectorAll('.slide video').forEach(v=>{if(s.contains(v)){try{v.currentTime=0}catch(e){}const p=v.play();p&&p.catch(()=>{})}else v.pause()});
+  [i,i+1,i+2].forEach(j=>slides[j]&&slides[j].querySelectorAll("video[data-src]").forEach(v=>{if(!v.getAttribute("src"))v.src=v.dataset.src}));
+  document.querySelectorAll(".slide video").forEach(v=>{if(s.contains(v)){try{v.currentTime=0}catch(e){}const p=v.play();p&&p.catch(()=>{})}else v.pause()});
   s.scrollTop=0;
 }
 function go(i){

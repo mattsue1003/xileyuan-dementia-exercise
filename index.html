@@ -550,6 +550,10 @@ a.go,.ytbtn,.live .ph button,.ph button{border-radius:999px!important}
 .vin.float{outline:6px solid rgba(255,255,255,.9);outline-offset:-1px}
 .top[style*="ink"] .logo{color:#2f52d9!important}
 .progress{background:linear-gradient(90deg,var(--mint),#ff9e4d)!important;height:4px!important;border-radius:0 4px 4px 0}
+
+.slide.leaving{display:flex!important;z-index:1;pointer-events:none}
+.slide.arriving{z-index:3;will-change:transform,clip-path,opacity}
+.slide.leaving{will-change:transform,opacity,filter}
 </style>
 
 <div class="loader" id="loader" aria-hidden="true"><div class="bar"></div><div class="ll" id="ll"></div><div class="lr" id="lr"></div></div>
@@ -1771,13 +1775,49 @@ function show(i){
   document.querySelectorAll(".slide video").forEach(v=>{if(s.contains(v)){try{v.currentTime=0}catch(e){}const p=v.play();p&&p.catch(()=>{})}else v.pause()});
   s.scrollTop=0;
 }
+/* ---- transitions: old and new slide on screen together, each slide type its own move ---- */
+const EZ="cubic-bezier(.65,0,.35,1)",EO="cubic-bezier(.16,1,.3,1)";
+const FX={
+  // chapter covers: new slide opens as a growing circle from the centre
+  iris:d=>({o:[{transform:"none",filter:"none"},{transform:"scale(1.06)",filter:"brightness(.55)"}],
+            n:[{clipPath:"circle(0% at 50% 55%)"},{clipPath:"circle(75% at 50% 55%)"}],ms:900,e:EZ}),
+  // quiz/check pages: two doors slide apart from the middle
+  doors:d=>({o:[{opacity:1},{opacity:.35}],
+             n:[{clipPath:"inset(0 50% 0 50%)"},{clipPath:"inset(0 0% 0 0%)"}],ms:750,e:EZ}),
+  // joint-movement series: horizontal push, like turning to the next card
+  push:d=>({o:[{transform:"none",opacity:1},{transform:`translateX(${-22*d}%)`,opacity:0}],
+            n:[{transform:`translateX(${100*d}%)`},{transform:"none"}],ms:760,e:EZ}),
+  // diagonal light sweep
+  diag:d=>({o:[{opacity:1},{opacity:.5}],
+            n:d>0?[{clipPath:"polygon(100% 0,100% 0,100% 0,100% 0)"},{clipPath:"polygon(-60% 0,100% 0,100% 100%,-20% 160%)"}]
+                 :[{clipPath:"polygon(0 100%,0 100%,0 100%,0 100%)"},{clipPath:"polygon(0 -60%,160% 100%,0 100%,0 100%)"}],ms:820,e:EZ}),
+  // depth: old slide sinks back, new floats up as a rounded card that settles
+  card:d=>({o:[{transform:"none",filter:"none"},{transform:"scale(.92)",filter:"brightness(.5)"}],
+            n:[{transform:`translateY(${100*d}%)`,clipPath:"inset(0 round 48px)"},{transform:"none",clipPath:"inset(0 round 0px)"}],ms:850,e:EO}),
+  // soft zoom-through crossfade
+  zoom:d=>({o:[{transform:"none",opacity:1,filter:"blur(0)"},{transform:`scale(${d>0?1.12:.9})`,opacity:0,filter:"blur(6px)"}],
+            n:[{transform:`scale(${d>0?.94:1.06})`,opacity:0},{transform:"none",opacity:1}],ms:700,e:EO})
+};
+function pickFX(to){
+  const id=to.id||"";
+  if(/^s-(cover|p1|p2|thanks)$/.test(id))return "iris";
+  if(to.classList.contains("quiz"))return "doors";
+  if(to.classList.contains("romslide")||/^關節活動/.test(to.dataset.title||""))return "push";
+  return ["diag","card","zoom"][slides.indexOf(to)%3];
+}
+let _tx=null;
 function go(i){
-  i=Math.max(0,Math.min(N-1,i));if(i===cur||busy)return;
+  i=Math.max(0,Math.min(N-1,i));if(i===cur)return;
+  if(_tx){_tx();}                       // finish any running transition at once
   if(reduce){show(i);return}
-  busy=true;const st=$("stage"),dirn=i>cur?1:-1;
-  const a=st.animate([{opacity:1,transform:"none",filter:"none"},{opacity:0,transform:`translateY(${-14*dirn}px) scale(.985)`,filter:"blur(4px)"}],{duration:200,easing:"ease-in",fill:"forwards"});
-  a.onfinish=()=>{show(i);const b=st.animate([{opacity:0,transform:`translateY(${14*dirn}px) scale(.985)`,filter:"blur(4px)"},{opacity:1,transform:"none",filter:"none"}],{duration:300,easing:"cubic-bezier(.2,.8,.2,1)",fill:"forwards"});b.onfinish=()=>{b.cancel();a.cancel();busy=false}};
-  clearTimeout(window._gt);window._gt=setTimeout(()=>{st.getAnimations().forEach(x=>x.cancel());if(slides[cur]!==slides[i])show(i);busy=false},900);
+  const from=slides[cur],to=slides[i],d=i>cur?1:-1,f=FX[pickFX(to)](d);
+  from.classList.add("leaving");show(i);to.classList.add("arriving");
+  const opt={duration:f.ms,easing:f.e,fill:"both"};
+  const a=from.animate(f.o,opt),b=to.animate(f.n,opt);
+  let done=false;
+  const end=()=>{if(done)return;done=true;_tx=null;a.cancel();b.cancel();from.classList.remove("leaving");to.classList.remove("arriving");clearTimeout(t)};
+  const t=setTimeout(end,f.ms+400);   // fail-safe
+  b.onfinish=end;_tx=end;
 }
 $("next").onclick=()=>go(cur+1);$("prev").onclick=()=>go(cur-1);
 document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(slides.findIndex(s=>s.id===b.dataset.go)));
